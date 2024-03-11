@@ -13,10 +13,10 @@ class Pokemon{
     }
 
     import_pokemon(){
-        
+
     }
 
     toString(){
-        return `${this.name} (${this.form}) - ${this.type1} ${this.type2} - Gen ${this.gen} - ${this.att}/${this.def}/${this.stam} - Lvl ${this.lvl}`;
+        return `${this.name} (${this.form}) - ${this.type1} ${this.type2} - Gen ${this.gen} - Stats ${this.att}/${this.def}/${this.stam} - Lvl ${this.lvl}`;
     }
 }
