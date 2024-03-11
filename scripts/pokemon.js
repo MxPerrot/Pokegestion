@@ -12,7 +12,11 @@ class Pokemon{
         this.lvl = lvl;
     }
 
+    import_pokemon(){
+        
+    }
+
     toString(){
-        return '';
+        return `${this.name} (${this.form}) - ${this.type1} ${this.type2} - Gen ${this.gen} - ${this.att}/${this.def}/${this.stam} - Lvl ${this.lvl}`;
     }
 }
