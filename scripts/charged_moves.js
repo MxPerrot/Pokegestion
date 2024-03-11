@@ -19,7 +19,7 @@ let charged_moves = [
         "power": 60,
         "stamina_loss_scaler": 0.06,
         "type": "Normal"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3800,
@@ -29,7 +29,7 @@ let charged_moves = [
         "power": 150,
         "stamina_loss_scaler": 0.15,
         "type": "Normal"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3000,
@@ -39,7 +39,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.08,
         "type": "Dark"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2100,
@@ -49,7 +49,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.065,
         "type": "Poison"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1900,
@@ -59,7 +59,7 @@ let charged_moves = [
         "power": 35,
         "stamina_loss_scaler": 0.055,
         "type": "Normal"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2700,
@@ -69,7 +69,7 @@ let charged_moves = [
         "power": 60,
         "stamina_loss_scaler": 0.06,
         "type": "Fire"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2200,
@@ -79,7 +79,7 @@ let charged_moves = [
         "power": 110,
         "stamina_loss_scaler": 0.12,
         "type": "Bug"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2200,
@@ -89,7 +89,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.09,
         "type": "Fire"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 4700,
@@ -99,7 +99,7 @@ let charged_moves = [
         "power": 100,
         "stamina_loss_scaler": 0.08,
         "type": "Ground"
-},
+    },
     {
         "critical_chance": 0.25,
         "duration": 1500,
@@ -109,7 +109,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.1,
         "type": "Fighting"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3200,
@@ -119,7 +119,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.065,
         "type": "Psychic"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3600,
@@ -129,7 +129,7 @@ let charged_moves = [
         "power": 140,
         "stamina_loss_scaler": 0.1,
         "type": "Ground"
-},
+    },
     {
         "critical_chance": 0.5,
         "duration": 2300,
@@ -139,7 +139,7 @@ let charged_moves = [
         "power": 100,
         "stamina_loss_scaler": 0.1,
         "type": "Rock"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1900,
@@ -149,7 +149,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.075,
         "type": "Ice"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1900,
@@ -159,7 +159,7 @@ let charged_moves = [
         "power": 40,
         "stamina_loss_scaler": 0.06,
         "type": "Psychic"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2500,
@@ -169,7 +169,7 @@ let charged_moves = [
         "power": 65,
         "stamina_loss_scaler": 0.08,
         "type": "Electric"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2700,
@@ -179,7 +179,7 @@ let charged_moves = [
         "power": 100,
         "stamina_loss_scaler": 0.08,
         "type": "Steel"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2300,
@@ -189,7 +189,7 @@ let charged_moves = [
         "power": 65,
         "stamina_loss_scaler": 0.08,
         "type": "Flying"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3300,
@@ -199,7 +199,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.09,
         "type": "Ice"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3100,
@@ -209,7 +209,7 @@ let charged_moves = [
         "power": 130,
         "stamina_loss_scaler": 0.11,
         "type": "Ice"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3000,
@@ -219,7 +219,7 @@ let charged_moves = [
         "power": 95,
         "stamina_loss_scaler": 0.095,
         "type": "Fire"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2400,
@@ -229,7 +229,7 @@ let charged_moves = [
         "power": 55,
         "stamina_loss_scaler": 0.06,
         "type": "Flying"
-},
+    },
     {
         "critical_chance": 0.25,
         "duration": 2800,
@@ -239,7 +239,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.08,
         "type": "Ground"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2600,
@@ -249,7 +249,7 @@ let charged_moves = [
         "power": 110,
         "stamina_loss_scaler": 0.09,
         "type": "Grass"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2600,
@@ -260,7 +260,7 @@ let charged_moves = [
         "power": 25,
         "stamina_loss_scaler": 0.04,
         "type": "Grass"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3700,
@@ -270,7 +270,7 @@ let charged_moves = [
         "power": 100,
         "stamina_loss_scaler": 0.09,
         "type": "Bug"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1700,
@@ -280,7 +280,7 @@ let charged_moves = [
         "power": 35,
         "stamina_loss_scaler": 0.05,
         "type": "Poison"
-},
+    },
     {
         "critical_chance": 0.25,
         "duration": 2200,
@@ -290,7 +290,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.07,
         "type": "Dark"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1900,
@@ -300,7 +300,7 @@ let charged_moves = [
         "power": 45,
         "stamina_loss_scaler": 0.065,
         "type": "Water"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2200,
@@ -310,7 +310,7 @@ let charged_moves = [
         "power": 60,
         "stamina_loss_scaler": 0.08,
         "type": "Fighting"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1900,
@@ -320,7 +320,7 @@ let charged_moves = [
         "power": 40,
         "stamina_loss_scaler": 0.065,
         "type": "Fighting"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2600,
@@ -330,7 +330,7 @@ let charged_moves = [
         "power": 45,
         "stamina_loss_scaler": 0.04,
         "type": "Water"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1900,
@@ -340,7 +340,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.09,
         "type": "Water"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2100,
@@ -350,7 +350,7 @@ let charged_moves = [
         "power": 55,
         "stamina_loss_scaler": 0.08,
         "type": "Grass"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2700,
@@ -360,7 +360,7 @@ let charged_moves = [
         "power": 65,
         "stamina_loss_scaler": 0.08,
         "type": "Psychic"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3500,
@@ -370,7 +370,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.06,
         "type": "Rock"
-},
+    },
     {
         "critical_chance": 0.25,
         "duration": 3200,
@@ -380,7 +380,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.06,
         "type": "Rock"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2700,
@@ -390,7 +390,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.075,
         "type": "Rock"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2900,
@@ -400,7 +400,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.08,
         "type": "Rock"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2900,
@@ -410,7 +410,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.04,
         "type": "Ghost"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1700,
@@ -420,7 +420,7 @@ let charged_moves = [
         "power": 40,
         "stamina_loss_scaler": 0.06,
         "type": "Ghost"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2300,
@@ -430,7 +430,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.06,
         "type": "Ghost"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3000,
@@ -440,7 +440,7 @@ let charged_moves = [
         "power": 100,
         "stamina_loss_scaler": 0.08,
         "type": "Ghost"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2800,
@@ -450,7 +450,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.06,
         "type": "Steel"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1900,
@@ -460,7 +460,7 @@ let charged_moves = [
         "power": 60,
         "stamina_loss_scaler": 0.08,
         "type": "Steel"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2800,
@@ -471,7 +471,7 @@ let charged_moves = [
         "power": 65,
         "stamina_loss_scaler": 0.05,
         "type": "Electric"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1800,
@@ -481,7 +481,7 @@ let charged_moves = [
         "power": 45,
         "stamina_loss_scaler": 0.075,
         "type": "Electric"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2400,
@@ -491,7 +491,7 @@ let charged_moves = [
         "power": 100,
         "stamina_loss_scaler": 0.11,
         "type": "Electric"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2500,
@@ -501,7 +501,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.09,
         "type": "Electric"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2800,
@@ -511,7 +511,7 @@ let charged_moves = [
         "power": 45,
         "stamina_loss_scaler": 0.04,
         "type": "Dragon"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3600,
@@ -521,7 +521,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.085,
         "type": "Dragon"
-},
+    },
     {
         "critical_chance": 0.25,
         "duration": 1700,
@@ -531,7 +531,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.08,
         "type": "Dragon"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3900,
@@ -541,7 +541,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.04,
         "type": "Fairy"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2600,
@@ -552,7 +552,7 @@ let charged_moves = [
         "power": 60,
         "stamina_loss_scaler": 0.05,
         "type": "Fairy"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3500,
@@ -562,7 +562,7 @@ let charged_moves = [
         "power": 100,
         "stamina_loss_scaler": 0.08,
         "type": "Fairy"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3900,
@@ -572,7 +572,7 @@ let charged_moves = [
         "power": 130,
         "stamina_loss_scaler": 0.095,
         "type": "Fairy"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2900,
@@ -582,7 +582,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.1,
         "type": "Fairy"
-},
+    },
     {
         "critical_chance": 0.25,
         "duration": 1500,
@@ -592,7 +592,7 @@ let charged_moves = [
         "power": 40,
         "stamina_loss_scaler": 0.07,
         "type": "Poison"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2300,
@@ -602,7 +602,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.09,
         "type": "Poison"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3200,
@@ -612,7 +612,7 @@ let charged_moves = [
         "power": 110,
         "stamina_loss_scaler": 0.095,
         "type": "Poison"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3100,
@@ -622,7 +622,7 @@ let charged_moves = [
         "power": 130,
         "stamina_loss_scaler": 0.12,
         "type": "Poison"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1600,
@@ -632,7 +632,7 @@ let charged_moves = [
         "power": 40,
         "stamina_loss_scaler": 0.065,
         "type": "Ground"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3500,
@@ -642,7 +642,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.06,
         "type": "Ground"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2300,
@@ -652,7 +652,7 @@ let charged_moves = [
         "power": 55,
         "stamina_loss_scaler": 0.065,
         "type": "Ground"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2900,
@@ -662,7 +662,7 @@ let charged_moves = [
         "power": 75,
         "stamina_loss_scaler": 0.075,
         "type": "Bug"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1600,
@@ -672,7 +672,7 @@ let charged_moves = [
         "power": 45,
         "stamina_loss_scaler": 0.08,
         "type": "Bug"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3800,
@@ -682,7 +682,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.05,
         "type": "Fire"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2600,
@@ -692,7 +692,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.07,
         "type": "Fire"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 4200,
@@ -702,7 +702,7 @@ let charged_moves = [
         "power": 140,
         "stamina_loss_scaler": 0.11,
         "type": "Fire"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2300,
@@ -712,7 +712,7 @@ let charged_moves = [
         "power": 60,
         "stamina_loss_scaler": 0.065,
         "type": "Water"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3200,
@@ -722,7 +722,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.06,
         "type": "Water"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3700,
@@ -732,7 +732,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.08,
         "type": "Water"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3300,
@@ -742,7 +742,7 @@ let charged_moves = [
         "power": 130,
         "stamina_loss_scaler": 0.11,
         "type": "Water"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2800,
@@ -752,7 +752,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.09,
         "type": "Psychic"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2300,
@@ -762,7 +762,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.1,
         "type": "Psychic"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3300,
@@ -772,7 +772,7 @@ let charged_moves = [
         "power": 60,
         "stamina_loss_scaler": 0.055,
         "type": "Ice"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3900,
@@ -783,7 +783,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.075,
         "type": "Grass"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2200,
@@ -793,7 +793,7 @@ let charged_moves = [
         "power": 55,
         "stamina_loss_scaler": 0.075,
         "type": "Fire"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 4900,
@@ -803,7 +803,7 @@ let charged_moves = [
         "power": 180,
         "stamina_loss_scaler": 0.12,
         "type": "Grass"
-},
+    },
     {
         "critical_chance": 0.25,
         "duration": 2400,
@@ -813,7 +813,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.09,
         "type": "Grass"
-},
+    },
     {
         "duration": 2600,
         "energy_delta": -50,
@@ -822,7 +822,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.12,
         "type": "Grass"
-},
+    },
     {
         "critical_chance": 0.25,
         "duration": 2700,
@@ -832,7 +832,7 @@ let charged_moves = [
         "power": 60,
         "stamina_loss_scaler": 0.06,
         "type": "Flying"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2700,
@@ -842,7 +842,7 @@ let charged_moves = [
         "power": 110,
         "stamina_loss_scaler": 0.11,
         "type": "Flying"
-},
+    },
     {
         "critical_chance": 0.25,
         "duration": 1600,
@@ -852,7 +852,7 @@ let charged_moves = [
         "power": 40,
         "stamina_loss_scaler": 0.075,
         "type": "Fighting"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2800,
@@ -862,7 +862,7 @@ let charged_moves = [
         "power": 60,
         "stamina_loss_scaler": 0.06,
         "type": "Normal"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1850,
@@ -872,7 +872,7 @@ let charged_moves = [
         "power": 40,
         "stamina_loss_scaler": 0.065,
         "type": "Normal"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1700,
@@ -882,7 +882,7 @@ let charged_moves = [
         "power": 55,
         "stamina_loss_scaler": 0.065,
         "type": "Normal"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2500,
@@ -892,7 +892,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.08,
         "type": "Normal"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1900,
@@ -902,7 +902,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.085,
         "type": "Normal"
-},
+    },
     {
         "duration": 1900,
         "energy_delta": -33,
@@ -912,7 +912,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0,
         "type": "Normal"
-},
+    },
     {
         "duration": 2200,
         "energy_delta": 0,
@@ -921,7 +921,7 @@ let charged_moves = [
         "power": 35,
         "stamina_loss_scaler": 0.1,
         "type": "Normal"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 4700,
@@ -931,7 +931,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.08,
         "type": "Water"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 4500,
@@ -941,7 +941,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.11,
         "type": "Water"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2900,
@@ -951,7 +951,7 @@ let charged_moves = [
         "power": 25,
         "stamina_loss_scaler": 0.06,
         "type": "Normal"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2900,
@@ -961,7 +961,7 @@ let charged_moves = [
         "power": 25,
         "stamina_loss_scaler": 0.06,
         "type": "Normal"
-},
+    },
     {
         "duration": 1000,
         "energy_delta": 6,
@@ -970,7 +970,7 @@ let charged_moves = [
         "power": 10,
         "stamina_loss_scaler": 0.01,
         "type": "Water"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2300,
@@ -980,7 +980,7 @@ let charged_moves = [
         "power": 100,
         "stamina_loss_scaler": 0.04,
         "type": "Fighting"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2700,
@@ -990,7 +990,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.04,
         "type": "Fighting"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3500,
@@ -1000,7 +1000,7 @@ let charged_moves = [
         "power": 140,
         "stamina_loss_scaler": 0.04,
         "type": "Fighting"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3550,
@@ -1010,7 +1010,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.04,
         "type": "Ice"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2600,
@@ -1020,7 +1020,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.04,
         "type": "Electric"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3700,
@@ -1030,7 +1030,7 @@ let charged_moves = [
         "power": 140,
         "stamina_loss_scaler": 0.04,
         "type": "Electric"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2700,
@@ -1040,7 +1040,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.04,
         "type": "Ice"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2000,
@@ -1050,7 +1050,7 @@ let charged_moves = [
         "power": 130,
         "stamina_loss_scaler": 0.04,
         "type": "Flying"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2000,
@@ -1060,7 +1060,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.04,
         "type": "Flying"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 4000,
@@ -1070,7 +1070,7 @@ let charged_moves = [
         "power": 60,
         "stamina_loss_scaler": 0.04,
         "type": "Ground"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2100,
@@ -1080,7 +1080,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.04,
         "type": "Rock"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3700,
@@ -1090,7 +1090,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.04,
         "type": "Bug"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2600,
@@ -1100,7 +1100,7 @@ let charged_moves = [
         "power": 60,
         "stamina_loss_scaler": 0.04,
         "type": "Ghost"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3300,
@@ -1110,7 +1110,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.04,
         "type": "Steel"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2100,
@@ -1120,7 +1120,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.04,
         "type": "Steel"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 4000,
@@ -1130,7 +1130,7 @@ let charged_moves = [
         "power": 160,
         "stamina_loss_scaler": 0.04,
         "type": "Fire"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2600,
@@ -1140,7 +1140,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.04,
         "type": "Grass"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3900,
@@ -1150,7 +1150,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.04,
         "type": "Grass"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2700,
@@ -1160,7 +1160,7 @@ let charged_moves = [
         "power": 120,
         "stamina_loss_scaler": 0.04,
         "type": "Psychic"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2600,
@@ -1170,7 +1170,7 @@ let charged_moves = [
         "power": 60,
         "stamina_loss_scaler": 0.04,
         "type": "Psychic"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3900,
@@ -1180,7 +1180,7 @@ let charged_moves = [
         "power": 110,
         "stamina_loss_scaler": 0.04,
         "type": "Dragon"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 3200,
@@ -1190,7 +1190,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.04,
         "type": "Dark"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2000,
@@ -1200,7 +1200,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.04,
         "type": "Dark"
-},
+    },
     {
         "duration": 1700,
         "energy_delta": -50,
@@ -1209,7 +1209,7 @@ let charged_moves = [
         "power": 65,
         "stamina_loss_scaler": 0.01,
         "type": "Water"
-},
+    },
     {
         "duration": 3600,
         "energy_delta": -100,
@@ -1218,7 +1218,7 @@ let charged_moves = [
         "power": 150,
         "stamina_loss_scaler": 0.01,
         "type": "Dragon"
-},
+    },
     {
         "duration": 1700,
         "energy_delta": -33,
@@ -1227,7 +1227,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.01,
         "type": "Steel"
-},
+    },
     {
         "duration": 4000,
         "energy_delta": -50,
@@ -1236,7 +1236,7 @@ let charged_moves = [
         "power": 70,
         "stamina_loss_scaler": 0.01,
         "type": "Psychic"
-},
+    },
     {
         "duration": 1700,
         "energy_delta": -100,
@@ -1245,7 +1245,7 @@ let charged_moves = [
         "power": 130,
         "stamina_loss_scaler": 0.01,
         "type": "Water"
-},
+    },
     {
         "duration": 1700,
         "energy_delta": -100,
@@ -1254,7 +1254,7 @@ let charged_moves = [
         "power": 130,
         "stamina_loss_scaler": 0.01,
         "type": "Ground"
-},
+    },
     {
         "duration": 1600,
         "energy_delta": -33,
@@ -1263,7 +1263,7 @@ let charged_moves = [
         "power": 55,
         "stamina_loss_scaler": 0.01,
         "type": "Fire"
-},
+    },
     {
         "duration": 1600,
         "energy_delta": -33,
@@ -1272,7 +1272,7 @@ let charged_moves = [
         "power": 55,
         "stamina_loss_scaler": 0.01,
         "type": "Ice"
-},
+    },
     {
         "duration": 1600,
         "energy_delta": -33,
@@ -1281,7 +1281,7 @@ let charged_moves = [
         "power": 55,
         "stamina_loss_scaler": 0.01,
         "type": "Rock"
-},
+    },
     {
         "duration": 1600,
         "energy_delta": -33,
@@ -1290,7 +1290,7 @@ let charged_moves = [
         "power": 55,
         "stamina_loss_scaler": 0.01,
         "type": "Water"
-},
+    },
     {
         "duration": 2600,
         "energy_delta": -50,
@@ -1299,7 +1299,7 @@ let charged_moves = [
         "power": 100,
         "stamina_loss_scaler": 0.01,
         "type": "Grass"
-},
+    },
     {
         "duration": 3300,
         "energy_delta": -50,
@@ -1308,7 +1308,7 @@ let charged_moves = [
         "power": 110,
         "stamina_loss_scaler": 0.01,
         "type": "Fire"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 1900,
@@ -1318,7 +1318,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.065,
         "type": "Water"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2900,
@@ -1328,7 +1328,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.065,
         "type": "Normal"
-},
+    },
     {
         "critical_chance": 0.05,
         "duration": 2600,
@@ -1338,7 +1338,7 @@ let charged_moves = [
         "power": 100,
         "stamina_loss_scaler": 0.065,
         "type": "Steel"
-},
+    },
     {
         "duration": 3100,
         "energy_delta": -100,
@@ -1347,7 +1347,7 @@ let charged_moves = [
         "power": 130,
         "stamina_loss_scaler": 0.01,
         "type": "Normal"
-},
+    },
     {
         "duration": 3000,
         "energy_delta": -50,
@@ -1356,7 +1356,7 @@ let charged_moves = [
         "power": 20,
         "stamina_loss_scaler": 0.01,
         "type": "Poison"
-},
+    },
     {
         "duration": 3600,
         "energy_delta": -50,
@@ -1365,7 +1365,7 @@ let charged_moves = [
         "power": 100,
         "stamina_loss_scaler": 0.01,
         "type": "Ground"
-},
+    },
     {
         "duration": 1900,
         "energy_delta": -50,
@@ -1374,7 +1374,7 @@ let charged_moves = [
         "power": 85,
         "stamina_loss_scaler": 0.01,
         "type": "Water"
-},
+    },
     {
         "duration": 2900,
         "energy_delta": -33,
@@ -1383,7 +1383,7 @@ let charged_moves = [
         "power": 55,
         "stamina_loss_scaler": 0.01,
         "type": "Bug"
-},
+    },
     {
         "duration": 1900,
         "energy_delta": 0,
@@ -1392,7 +1392,7 @@ let charged_moves = [
         "power": 0,
         "stamina_loss_scaler": 0.01,
         "type": "Normal"
-},
+    },
     {
         "duration": 2300,
         "energy_delta": -50,
@@ -1401,7 +1401,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.01,
         "type": "Water"
-},
+    },
     {
         "duration": 2400,
         "energy_delta": -33,
@@ -1410,7 +1410,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.01,
         "type": "Steel"
-},
+    },
     {
         "duration": 3000,
         "energy_delta": -50,
@@ -1419,7 +1419,7 @@ let charged_moves = [
         "power": 85,
         "stamina_loss_scaler": 0.01,
         "type": "Fighting"
-},
+    },
     {
         "duration": 2200,
         "energy_delta": -33,
@@ -1428,7 +1428,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.01,
         "type": "Bug"
-},
+    },
     {
         "duration": 3100,
         "energy_delta": -33,
@@ -1437,7 +1437,7 @@ let charged_moves = [
         "power": 45,
         "stamina_loss_scaler": 0.01,
         "type": "Grass"
-},
+    },
     {
         "duration": 2500,
         "energy_delta": 0,
@@ -1446,7 +1446,7 @@ let charged_moves = [
         "power": 0,
         "stamina_loss_scaler": 0.01,
         "type": "Bug"
-},
+    },
     {
         "duration": 2400,
         "energy_delta": 0,
@@ -1455,7 +1455,7 @@ let charged_moves = [
         "power": 0,
         "stamina_loss_scaler": 0.01,
         "type": "Fighting"
-},
+    },
     {
         "duration": 2800,
         "energy_delta": -50,
@@ -1464,7 +1464,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.01,
         "type": "Ghost"
-},
+    },
     {
         "duration": 2200,
         "energy_delta": -33,
@@ -1473,7 +1473,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.01,
         "type": "Water"
-},
+    },
     {
         "duration": 1200,
         "energy_delta": -33,
@@ -1482,7 +1482,7 @@ let charged_moves = [
         "power": 45,
         "stamina_loss_scaler": 0.01,
         "type": "Fire"
-},
+    },
     {
         "duration": 1300,
         "energy_delta": -33,
@@ -1491,7 +1491,7 @@ let charged_moves = [
         "power": 45,
         "stamina_loss_scaler": 0.01,
         "type": "Water"
-},
+    },
     {
         "duration": 2000,
         "energy_delta": -33,
@@ -1500,7 +1500,7 @@ let charged_moves = [
         "power": 50,
         "stamina_loss_scaler": 0.01,
         "type": "Fighting"
-},
+    },
     {
         "duration": 4700,
         "energy_delta": -100,
@@ -1509,7 +1509,7 @@ let charged_moves = [
         "power": 200,
         "stamina_loss_scaler": 0.01,
         "type": "Normal"
-},
+    },
     {
         "duration": 2000,
         "energy_delta": -33,
@@ -1518,7 +1518,7 @@ let charged_moves = [
         "power": 10,
         "stamina_loss_scaler": 0.01,
         "type": "Normal"
-},
+    },
     {
         "duration": 700,
         "energy_delta": -33,
@@ -1527,7 +1527,7 @@ let charged_moves = [
         "power": 35,
         "stamina_loss_scaler": 0.01,
         "type": "Normal"
-},
+    },
     {
         "duration": 2600,
         "energy_delta": -50,
@@ -1536,7 +1536,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.01,
         "type": "Psychic"
-},
+    },
     {
         "duration": 1900,
         "energy_delta": 0,
@@ -1545,7 +1545,7 @@ let charged_moves = [
         "power": 0,
         "stamina_loss_scaler": 0.01,
         "type": "Normal"
-},
+    },
     {
         "duration": 2800,
         "energy_delta": 0,
@@ -1554,7 +1554,7 @@ let charged_moves = [
         "power": 0,
         "stamina_loss_scaler": 0.01,
         "type": "Ground"
-},
+    },
     {
         "duration": 1200,
         "energy_delta": -33,
@@ -1563,7 +1563,7 @@ let charged_moves = [
         "power": 55,
         "stamina_loss_scaler": 0.01,
         "type": "Fighting"
-},
+    },
     {
         "duration": 2300,
         "energy_delta": -50,
@@ -1572,7 +1572,7 @@ let charged_moves = [
         "power": 110,
         "stamina_loss_scaler": 0.01,
         "type": "Fighting"
-},
+    },
     {
         "duration": 1800,
         "energy_delta": -50,
@@ -1581,7 +1581,7 @@ let charged_moves = [
         "power": 90,
         "stamina_loss_scaler": 0.01,
         "type": "Fighting"
-},
+    },
     {
         "duration": 2200,
         "energy_delta": -100,
@@ -1590,7 +1590,7 @@ let charged_moves = [
         "power": 100,
         "stamina_loss_scaler": 0.01,
         "type": "Dark"
-},
+    },
     {
         "duration": 3600,
         "energy_delta": -50,
@@ -1599,7 +1599,7 @@ let charged_moves = [
         "power": 110,
         "stamina_loss_scaler": 0.01,
         "type": "Rock"
-},
+    },
     {
         "duration": 3400,
         "energy_delta": -100,
@@ -1608,7 +1608,7 @@ let charged_moves = [
         "power": 180,
         "stamina_loss_scaler": 0.01,
         "type": "Flying"
-},
+    },
     {
         "duration": 2000,
         "energy_delta": -100,
@@ -1617,7 +1617,7 @@ let charged_moves = [
         "power": 120,
         "stamina_loss_scaler": 0,
         "type": "Normal"
-},
+    },
     {
         "duration": 2000,
         "energy_delta": -100,
@@ -1626,7 +1626,7 @@ let charged_moves = [
         "power": 120,
         "stamina_loss_scaler": 0,
         "type": "Fire"
-},
+    },
     {
         "duration": 2000,
         "energy_delta": -100,
@@ -1635,7 +1635,7 @@ let charged_moves = [
         "power": 120,
         "stamina_loss_scaler": 0,
         "type": "Ice"
-},
+    },
     {
         "duration": 2000,
         "energy_delta": -100,
@@ -1644,7 +1644,7 @@ let charged_moves = [
         "power": 120,
         "stamina_loss_scaler": 0,
         "type": "Water"
-},
+    },
     {
         "duration": 2000,
         "energy_delta": -100,
@@ -1653,7 +1653,7 @@ let charged_moves = [
         "power": 120,
         "stamina_loss_scaler": 0,
         "type": "Electric"
-},
+    },
     {
         "duration": 1800,
         "energy_delta": -50,
@@ -1662,7 +1662,7 @@ let charged_moves = [
         "power": 80,
         "stamina_loss_scaler": 0.01,
         "type": "Flying"
-},
+    },
     {
         "duration": 2800,
         "energy_delta": -33,
@@ -1671,7 +1671,7 @@ let charged_moves = [
         "power": 95,
         "stamina_loss_scaler": 0.01,
         "type": "Fire"
-},
+    },
     {
         "duration": 2500,
         "energy_delta": -100,
@@ -1680,7 +1680,7 @@ let charged_moves = [
         "power": 130,
         "stamina_loss_scaler": 0.01,
         "type": "Grass"
-},
+    },
     {
         "duration": 2500,
         "energy_delta": -50,
@@ -1689,7 +1689,7 @@ let charged_moves = [
         "power": 75,
         "stamina_loss_scaler": 0.01,
         "type": "Normal"
-},
+    },
     {
         "duration": 2800,
         "energy_delta": -50,
@@ -1698,7 +1698,7 @@ let charged_moves = [
         "power": 35,
         "stamina_loss_scaler": 0.01,
         "type": "Flying"
-},
+    },
     {
         "duration": 1600,
         "energy_delta": -33,
@@ -1707,7 +1707,7 @@ let charged_moves = [
         "power": 55,
         "stamina_loss_scaler": 0.01,
         "type": "Normal"
-},
+    },
     {
         "duration": 1200,
         "energy_delta": -33,
@@ -1716,7 +1716,7 @@ let charged_moves = [
         "power": 30,
         "stamina_loss_scaler": 0.01,
         "type": "Psychic"
-},
+    },
     {
         "duration": 2600,
         "energy_delta": -100,
@@ -1725,7 +1725,7 @@ let charged_moves = [
         "power": 120,
         "stamina_loss_scaler": 0.01,
         "type": "Fire"
-},
+    },
     {
         "duration": 2200,
         "energy_delta": -33,
@@ -1734,7 +1734,7 @@ let charged_moves = [
         "power": 60,
         "stamina_loss_scaler": 0.01,
         "type": "Ice"
-},
+    },
     {
         "duration": 3400,
         "energy_delta": -100,
@@ -1743,7 +1743,7 @@ let charged_moves = [
         "power": 200,
         "stamina_loss_scaler": 0.01,
         "type": "Flying"
-},
+    },
     {
         "duration": 3400,
         "energy_delta": -100,
@@ -1752,7 +1752,7 @@ let charged_moves = [
         "power": 225,
         "stamina_loss_scaler": 0.01,
         "type": "Flying"
-},
+    },
     {
         "duration": 2600,
         "energy_delta": -100,
@@ -1761,7 +1761,7 @@ let charged_moves = [
         "power": 135,
         "stamina_loss_scaler": 0.01,
         "type": "Fire"
-},
+    },
     {
         "duration": 2600,
         "energy_delta": -100,
@@ -1770,7 +1770,7 @@ let charged_moves = [
         "power": 155,
         "stamina_loss_scaler": 0.01,
         "type": "Fire"
-},
+    },
     {
         "duration": 2000,
         "energy_delta": -100,
@@ -1779,5 +1779,5 @@ let charged_moves = [
         "power": 100,
         "stamina_loss_scaler": 0.01,
         "type": "Flying"
-}
+    }
 ]
