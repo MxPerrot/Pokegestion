@@ -23,36 +23,66 @@ class Pokemon {
         for (var i = 0; i < pokemon.length; i++) {
             if (pokemon[i].form == "Normal") {
 
+                // Base values
                 let pokemon_id = pokemon[i].pokemon_id //pokemon.js
                 let pokemon_name = pokemon[i].pokemon_name //pokemon.js
-                
-                
-                
-                let generation_number = generation[].generation_number // where ID is equal to pokemon[i].generation //generation.js
-
-
-
                 let form = pokemon[i].form //pokemon.js
-                
-                let type = pokemon_type //pokemon_type.js where ID is equal to pokemon[i].type1 and pokemon[i].type2
-                
-
-
                 let base_attack = pokemon[i].base_attack //pokemon.js
                 let base_defense = pokemon[i].base_defense //pokemon.js
                 let base_stamina = pokemon[i].base_stamina //pokemon.js
-                
-                let charged_moves = charged_moves //pokemon_moves.js
-                let fast_moves = fast_moves //pokemon_moves.js
-                let elite_charged_moves = elite_charged_moves //pokemon_moves.js
-                let elite_fast_moves = elite_fast_moves //pokemon_moves.js
+
+                // Finding primary keys for other tables
+                let generation_index = generation.findIndex(function () {
+                    return generation.id === pokemon[i].pokemon_id;
+                })
+
+                let type_index = pokemon_type.findIndex(function () {
+                    return (pokemon_type.pokemon_id === pokemon[i].pokemon_id) && (pokemon_type.form === pokemon[i].form);
+                })
+
+                let move_index = pokemon_moves.findIndex(function () {
+                    return (pokemon_moves.pokemon_id === pokemon[i].pokemon_id) && (pokemon_moves.form === pokemon[i].form);
+                })
+
+                // Importing values from other tables
+                let generation_number = generation[generation_index].generation_number
+                let type = pokemon_type[type_index].type_name
+                let charged_moves = pokemon_moves[move_index].charged_moves
+                let fast_moves = pokemon_moves[move_index].fast_moves
+                let elite_charged_moves = pokemon_moves[move_index].elite_charged_moves
+                let elite_fast_moves = pokemon_moves[move_index].elite_fast_moves
             }
         }
 
 
     }
 
+    display_array(array) {
+        let result = "";
+        for (var i = 0; i < array.length; i++) {
+            result.concat(array[i] + "\n");
+        }
+        return result;
+    }
+
     toString() {
-        return `${this.name} (${this.form}) - ${this.type1} ${this.type2} - Gen ${this.gen} - ${this.att}/${this.def}/${this.stam} - Lvl ${this.lvl}`;
+        let string =
+            "Pokemon ID: " + this.pokemon_id + "\n"
+            + "Pokemon Name: " + this.pokemon_name + "\n"
+            + "Generation Number: " + this.generation_number + "\n"
+            + "Form: " + this.form + "\n"
+            + "Type: " + this.display_array(this.type) + "\n"
+            + "-- STATS --" + "\n"
+            + "Base Attack: " + this.base_attack + "\n"
+            + "Base Defense: " + this.base_defense + "\n"
+            + "Base Stamina: " + this.base_stamina + "\n"
+            + "-- MOVES --" + "\n"
+            + "Charged Moves: " + this.display_array(this.charged_moves) + "\n"
+            + "Fast Moves: " + this.display_array(this.fast_moves) + "\n"
+            + "Elite Charged Moves: " + this.display_array(this.elite_charged_moves) + "\n"
+            + "Elite Fast Moves: " + this.display_array(this.elite_fast_moves) + "\n";
+
+
+        return string;
     }
 }
