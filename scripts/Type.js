@@ -20,4 +20,12 @@ class Type {
         "Steel",
         "Water"
     ]
+
+    constructor(type_name) {
+        this.type_name = type_name;
+    }
+
+    toString() {
+        return this.type_name;
+    }
 }
