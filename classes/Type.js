@@ -31,7 +31,10 @@ class Type {
         }
     }
 
-    constructor() {
+    constructor(type_def, type_att , effectivness) {
+        this.type_def = type_def;
+        this.type_att = type_att;
+        this.effectivness = effectivness;
     }
 
     toString() {
