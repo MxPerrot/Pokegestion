@@ -1,24 +1,6 @@
 class Type {
 
     all_types = [
-        "Bug",
-        "Dark",
-        "Dragon",
-        "Electric",
-        "Fairy",
-        "Fighting",
-        "Fire",
-        "Flying",
-        "Ghost",
-        "Grass",
-        "Ground",
-        "Ice",
-        "Normal",
-        "Poison",
-        "Psychic",
-        "Rock",
-        "Steel",
-        "Water"
     ]
 
     test() {
@@ -35,6 +17,11 @@ class Type {
         this.type_def = type_def;
         this.type_att = type_att;
         this.effectivness = effectivness;
+        // Si la combinaison type_att/type_def n'est pas déjà dans all_types, on l'ajoute
+
+
+
+        
     }
 
     toString() {
