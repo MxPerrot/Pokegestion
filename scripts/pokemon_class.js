@@ -66,6 +66,7 @@ class Pokemon {
     }
 
     toString() {
+        /*
         let string =
             "Pokemon ID: " + this.pokemon_id + "\n"
             + "Pokemon Name: " + this.pokemon_name + "\n"
@@ -81,8 +82,8 @@ class Pokemon {
             + "Fast Moves: " + this.display_array(this.fast_moves) + "\n"
             + "Elite Charged Moves: " + this.display_array(this.elite_charged_moves) + "\n"
             + "Elite Fast Moves: " + this.display_array(this.elite_fast_moves) + "\n";
-
-
+        */
+        let string = this.pokemon_id + " | " + this.pokemon_name + " | Gen " + this.generation_number + " | " + this.form + " form\n"; 
         return string;
     }
 }
