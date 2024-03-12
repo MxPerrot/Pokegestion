@@ -21,8 +21,10 @@ class Type {
         "Water"
     ]
 
-    constructor(type_name) {
-        this.type_name = type_name;
+    constructor(type_def, type_att , effectivness) {
+        this.type_def = type_def;
+        this.type_att = type_att;
+        this.effectivness = effectivness;
     }
 
     toString() {
