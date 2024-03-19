@@ -1,17 +1,17 @@
 class Pokemon {
     constructor(pokemon_id, pokemon_name, generation_number, form, type, base_attack, base_defense, base_stamina, charged_moves, fast_moves, elite_charged_moves, elite_fast_moves) {
-        let pokemon_id = pokemon_id //pokemon.js
-        let pokemon_name = pokemon_name //pokemon.js
-        let generation_number = generation_number //generation.js
-        let form = form //pokemon.js
-        let type = type //pokemon_type.js
-        let base_attack = base_attack //pokemon.js
-        let base_defense = base_defense //pokemon.js
-        let base_stamina = base_stamina //pokemon.js
-        let charged_moves = charged_moves //pokemon_moves.js
-        let fast_moves = fast_moves //pokemon_moves.js
-        let elite_charged_moves = elite_charged_moves //pokemon_moves.js
-        let elite_fast_moves = elite_fast_moves //pokemon_moves.js
+        this.pokemon_id = pokemon_id //pokemon.js
+        this.pokemon_name = pokemon_name //pokemon.js
+        this.generation_number = generation_number //generation.js
+        this.form = form //pokemon.js
+        this.type = type //pokemon_type.js
+        this.base_attack = base_attack //pokemon.js
+        this.base_defense = base_defense //pokemon.js
+        this.base_stamina = base_stamina //pokemon.js
+        this.charged_moves = charged_moves //pokemon_moves.js
+        this.fast_moves = fast_moves //pokemon_moves.js
+        this.elite_charged_moves = elite_charged_moves //pokemon_moves.js
+        this.elite_fast_moves = elite_fast_moves //pokemon_moves.js
     }
 
     import_pokemon() {
