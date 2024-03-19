@@ -1,13 +1,3 @@
-// http://api/v1/current_pokemon_moves.json
-// This API returns all moves that Pokemon can currently learn via catching, evolving, hatching, or using TM's.
-// Returns a JSON array where each element is a dict containing :
-// - Pokemon ID, 
-// - Pokemon name, 
-// - an array of charged moves, 
-// - an array of fast moves, 
-// - an array of charged moves learnable from an elite TM, 
-// - an array of fast legacy fast moves, 
-// and optionally the form.
 [
     {
         "charged_moves": [
