@@ -9,6 +9,9 @@ A pokedex webapp project
 [Maxime PERROT](mailto:maxime.perrot@etudiant.univ-rennes.fr)
 
 > Université de Rennes
+>
 > IUT de Lannion
+>
 > BUT Informatique 2
-> Projet de R4.A.10
+>
+> Projet de R4.A.10 : Complément Web
