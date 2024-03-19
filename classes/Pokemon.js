@@ -14,7 +14,7 @@ class Pokemon {
         this.elite_fast_moves = elite_fast_moves //pokemon_moves.js
     }
 
-    import_pokemon() {
+    static import_pokemon() {
         // Create table with pokemon id as keys
 
         $data = {};
