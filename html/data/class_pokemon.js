@@ -30,11 +30,38 @@ class Pokemon {
                 let base_attack = pokemon[i].base_attack //pokemon.js
                 let base_defense = pokemon[i].base_defense //pokemon.js
                 let base_stamina = pokemon[i].base_stamina //pokemon.js
+                
+                // DEBUG
+                console.log(generation[0].size);
+
+                for (let i = 0; i < generation[0].length; i++) {
+                    console.log(i);
+                }
+                /*
+                console.log(
+                //  const   array  index_objet    num  index
+                    generation[0]["Generation " + i][47]["id"]
+                ); */
+                // FIN DEBUG
+
+
+                /* TODO: fix generation_index search
 
                 // Finding primary keys for other tables
-                let generation_index = generation.findIndex(function () {
-                    return generation.id === pokemon[i].pokemon_id;
-                })
+                let generation_index = 0;
+
+                for (const gen in generation) {
+                    // schearching for the generation of the pokemon
+                    generation_index = generation[gen].findIndex(function () {
+                        return generation[gen].pokemon_id === pokemon[i].pokemon_id;
+                    })
+
+                    
+                }
+                */
+
+
+                // console.log(generation_index); // debug
 
                 let type_index = pokemon_type.findIndex(function () {
                     return (pokemon_type.pokemon_id === pokemon[i].pokemon_id) && (pokemon_type.form === pokemon[i].form);

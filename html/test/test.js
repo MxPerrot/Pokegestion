@@ -1,0 +1,1 @@
+Pokemon.import_pokemon();
