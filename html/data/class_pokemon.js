@@ -1,4 +1,6 @@
 class Pokemon {
+    all_pokemon = [];
+
     constructor(pokemon_id, pokemon_name, generation_number, form, type, base_attack, base_defense, base_stamina, charged_moves, fast_moves, elite_charged_moves, elite_fast_moves) {
         this.pokemon_id = pokemon_id //pokemon.js
         this.pokemon_name = pokemon_name //pokemon.js
@@ -12,12 +14,10 @@ class Pokemon {
         this.fast_moves = fast_moves //pokemon_moves.js
         this.elite_charged_moves = elite_charged_moves //pokemon_moves.js
         this.elite_fast_moves = elite_fast_moves //pokemon_moves.js
+        this.all_pokemon[this.pokemon_id] = this;
     }
 
     static import_pokemon() {
-        // Create table with pokemon id as keys
-
-        $data = {};
 
         // For every pokemon in pokemons.js
         for (var i = 0; i < pokemon.length; i++) {
@@ -47,14 +47,17 @@ class Pokemon {
                 // Importing values from other tables
                 let generation_number = generation[generation_index].generation_number
                 let type = pokemon_type[type_index].type_name
+                for(i = 0; i < type.length; i++) {
+                    Type(type[i]);
+                }
                 let charged_moves = pokemon_moves[move_index].charged_moves
                 let fast_moves = pokemon_moves[move_index].fast_moves
                 let elite_charged_moves = pokemon_moves[move_index].elite_charged_moves
                 let elite_fast_moves = pokemon_moves[move_index].elite_fast_moves
+                // creating the new pokemon object
+                new Pokemon(pokemon_id, pokemon_name, generation_number, form, type, base_attack, base_defense, base_stamina, charged_moves, fast_moves, elite_charged_moves, elite_fast_moves);
             }
         }
-
-
     }
 
     display_array(array) {
