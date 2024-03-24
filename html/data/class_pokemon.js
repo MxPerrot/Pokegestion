@@ -1,5 +1,16 @@
 class Pokemon {
+
+
+    /********************************************************************
+    *                            Attributes                             *
+    ********************************************************************/
+
     static all_pokemon = [];
+
+
+    /********************************************************************
+    *                            Constructor                            *
+    ********************************************************************/
 
     constructor(pokemon_id, pokemon_name, generation_number, form, type, base_attack, base_defense, base_stamina, charged_moves, fast_moves, elite_charged_moves, elite_fast_moves) {
         this.pokemon_id = pokemon_id //pokemon.js
@@ -16,6 +27,11 @@ class Pokemon {
         this.elite_fast_moves = elite_fast_moves //pokemon_moves.js
         Pokemon.all_pokemon[pokemon_id] = this;
     }
+
+
+    /********************************************************************
+    *                              Methods                              *
+    ********************************************************************/
 
     static import_pokemon() {
         // For every pokemon in pokemons.js
@@ -96,7 +112,6 @@ class Pokemon {
             }
         }
     }
-
 
 
     /********************************************************************
