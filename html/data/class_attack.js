@@ -39,12 +39,14 @@ class Attack {
         }
     }
 
+    // toString() d'instance de la classe Attack
     toString() {
         let string = "";
-        string += `Id : ${this.move_id}Attack : ${this.name} | Power : ${this.power} | Type : ${this.type} \n`;
+        string += `[${this.move_id}] ${this.name} | Power : ${this.power} | Type : ${this.type} \n`;
         return string;
     }
 
+    // toString() de la classe Attack
     static toString(){
         let string = "";
         for (const key in this.all_attacks) {
