@@ -39,7 +39,6 @@ function sortPokemonByStamina(){
     Pokemon.all_pokemon.sort((a, b) => (a.getBaseStamina() > b.getBaseStamina()) ? 1 : -1);
 }
 
-// Fonction getWeakestEnemies(attack) retournant la liste des pokémons pour lesquel l'attaque choisie est la plus efficace. Exemple de calcul d'efficacité pour une attaque Megahorn qui est associée au type Bug. Le Pokémon Bulbasaur est de type Grass et Poison. S'il est soumis à cette attaque Megahorn, l'efficacité de cette attaque sera de 1,6 pour son type Grass et de 0,625 pour son type Poison. L'efficacité global de cette attaque est de 1,6 x 0,625 soit 1.
 function getWeakestEnemies(attack){
     let pokemons = [];
     let attackClass;
@@ -56,15 +55,38 @@ function getWeakestEnemies(attack){
             console.log(attackClass.getType());
             effectiveness *= currentEffectiveness[attackClass.getType()];
         }
-        if(effectiveness < 1) {
+        if(effectiveness > 1) {
             pokemons += Pokemon.all_pokemon[key] + "\n";
         }
     }
     return pokemons;
 }
 
-
+// retourne la liste des type d'attaque les plus efficaces contre un pokemon donné (getWeakestEnemies mais pour les attaques)
+function getBestAttackTypesForEnemy(name){
+    let attacks = [];
+    let pokemon;
+    for(const key in Pokemon.all_pokemon) {
+        if(Pokemon.all_pokemon[key].getPokemonName() == name) {
+            pokemon = Pokemon.all_pokemon[key];
+        }
+    }
+    for(const key in Attack.all_attacks) {
+        let effectiveness = 1;
+        for(const type in pokemon.getType()) {
+            let typelist = Type.all_types[pokemon.getType()[type]];
+            let currentEffectiveness = typelist.getTypeEffectiveness();
+            effectiveness *= currentEffectiveness[Attack.all_attacks[key].getType()];
+        }
+        if(effectiveness > 1) {
+            attacks += Attack.all_attacks[key] + "\n";
+            console.log(attacks);
+        }
+    }
+    return attacks;
+}
 
 document.getElementById("test1").innerText = getPokemonsByType("Grass");
 document.getElementById("test2").innerText = getPokemonsByAttack("Thunder Shock");
 document.getElementById("test3").innerText = getWeakestEnemies("Thunder Shock");
+document.getElementById("test4").innerText = getBestAttackTypesForEnemy("Mewtwo");
