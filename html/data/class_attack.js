@@ -4,12 +4,21 @@ class Attack {
     ]
 
     constructor(attack) {
+        this.name = attack;
         // deux boucles une qui vas chercher dans charged_moves et l'autre dans fast_moves le nom de l'attaque pour trouver l'attaque
         for(let i = 0; i < charged_moves.length; i++) {
             if(charged_moves[i].name === attack) {
                 // vérification que l'attaque n'est pas déjà présente dans le tableau
                 if(Attack.all_attacks.includes(charged_moves[i]) === false) {
-                    Attack.all_attacks[charged_moves[i].move_id] = charged_moves[i];
+                    this.move_id = charged_moves[i].move_id;
+                    this.power = charged_moves[i].power
+                    this.type = charged_moves[i].type
+                    this.duration = charged_moves[i].duration
+                    this.energy_delta = charged_moves[i].energy_delta
+                    this.stamina_loss_scaler = charged_moves[i].stamina_loss_scaler
+                    this.critical_chance = charged_moves[i].critical_chance
+                    Attack.all_attacks[this.move_id] = this;
+                    return;
                 }
             }
         }
@@ -17,13 +26,25 @@ class Attack {
             if(fast_moves[i].name === attack) {
                 // vérification que l'attaque n'est pas déjà présente dans le tableau
                 if(Attack.all_attacks.includes(fast_moves[i]) === false) {
-                    Attack.all_attacks[fast_moves[i].move_id] = fast_moves[i];
+                    this.move_id = fast_moves[i].move_id;
+                    this.power = fast_moves[i].power
+                    this.type = fast_moves[i].type
+                    this.duration = fast_moves[i].duration
+                    this.energy_delta = fast_moves[i].energy_delta
+                    this.stamina_loss_scaler = fast_moves[i].stamina_loss_scaler
+                    Attack.all_attacks[this.move_id] = this;
+                    return;
                 }
             }
         }
     }
-    
-    // méthode toString pour afficher tout les attaques de all_attacks à faire
+
+    toString() {
+        let string = "";
+        string += `Id : ${this.move_id}Attack : ${this.name} | Power : ${this.power} | Type : ${this.type} \n`;
+        return string;
+    }
+
     static toString(){
         let string = "";
         for (const key in this.all_attacks) {
