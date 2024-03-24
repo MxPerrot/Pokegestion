@@ -1,10 +1,9 @@
 Pokemon.import_pokemon();
 
-function bulbizarre() {
-    let bulbizarre = Pokemon.all_pokemon[1];
-    poke.innerText = bulbizarre.toString();
-}
+console.log(Type.all_types.toString());
 
+
+/*
 function getPokemonsByType(typeName) {
     let pokemons = [];
     for (let i = 0; i < Pokemon.all_pokemon.length; i++) {
@@ -31,3 +30,4 @@ function getPokemonsByAttack(attackName)    {
     }
     return pokemons;
 }
+*/
