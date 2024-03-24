@@ -9,21 +9,25 @@ class Type {
             // Avec une boucle
             for (const key in type_effectiveness[0][type]) {
                 if (type_effectiveness[0][type].hasOwnProperty(key)) {
+                    this.name = type;
+                    this.effectiveness = type_effectiveness[0][type];
                     Type.all_types[type][key] = type_effectiveness[0][type][key];
                 }
             }
             console.log(Type.all_types[type]);
-            console.log("-----------------");
-            /*
-            // Par assignation directe
-            this.all_types[type[i]] = new Object(); 
-            this.all_types[type[i]] = type_effectiveness[0][type[i]];
-            console.log(this.all_types[type[i]]);
-            */
         }
     }
 
+    // méthode toString pour afficher tout les types et leur efficacité de all_types à faire.
     toString() {
-        return this.all_types;
+        return ;
+    }
+
+    static toString(){
+        for (const key in this.all_types) {
+            if (this.all_types.hasOwnProperty(key)) {
+                console.log(this.all_types[key]);
+            }
+        }
     }
 }

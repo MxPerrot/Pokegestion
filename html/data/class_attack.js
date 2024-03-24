@@ -22,8 +22,9 @@ class Attack {
             }
         }
     }
-
+    
+    // méthode toString pour afficher tout les attaques de all_attacks à faire
     toString() {
-        return this.all_Attacks;
+        return `[${this.attack_id}] ${this.attack_name} - ${this.type} | pow: ${this.power} - eng: ${this.energy} - dur: ${this.duration}`;
     }
 }

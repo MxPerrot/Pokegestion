@@ -97,37 +97,23 @@ class Pokemon {
         }
     }
 
-    display_array(array) {
-        let result = "";
-        for (var i = 0; i < array.length; i++) {
-            result.concat(array[i] + "\n");
-        }
-        return result;
+    // méthode getTypes() pour retourner une liste des types de la classe Type
+    static getTypes() {
+        return Type.all_types;
+    }
+
+    static getAttacks() {
+        return Attack.all_attacks;
     }
 
     toString() {
-        /*
-        let string =
-            "Pokemon ID: " + this.pokemon_id + "\n"
-            + "Pokemon Name: " + this.pokemon_name + "\n"
-            + "Generation Number: " + this.generation_number + "\n"
-            + "Form: " + this.form + "\n"
-            + "Type: " + this.display_array(this.type) + "\n"
-            + "-- STATS --" + "\n"
-            + "Base Attack: " + this.base_attack + "\n"
-            + "Base Defense: " + this.base_defense + "\n"
-            + "Base Stamina: " + this.base_stamina + "\n"
-            + "-- MOVES --" + "\n"
-            + "Charged Moves: " + this.display_array(this.charged_moves) + "\n"
-            + "Fast Moves: " + this.display_array(this.fast_moves) + "\n"
-            + "Elite Charged Moves: " + this.display_array(this.elite_charged_moves) + "\n"
-            + "Elite Fast Moves: " + this.display_array(this.elite_fast_moves) + "\n";
-        */
-        let string = this.pokemon_id + " | " + this.pokemon_name + " | Gen " + this.generation_number + " | " + this.form + " form\n"; 
+        let string =  this.pokemon_id + " | " + this.pokemon_name + " | Gen " + this.generation_number + " | "
+                    + this.form + " form | " + this.base_attack + " attack | " + this.base_defense + " defense | " 
+                    + this.base_stamina + " stamina | "; 
         return string;
     }
 
-    static toStringAllPokemon(){
+    static toString(){
         let string = "";
         for (const key in this.all_pokemon) {
             if (this.all_pokemon.hasOwnProperty(key)) {
