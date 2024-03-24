@@ -1,7 +1,6 @@
 class Attack {
 
-    static all_attacks = [
-    ]
+    static all_attacks = [];
 
     constructor(attack) {
         this.name = attack;
