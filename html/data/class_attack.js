@@ -24,7 +24,13 @@ class Attack {
     }
     
     // méthode toString pour afficher tout les attaques de all_attacks à faire
-    toString() {
-        return `[${this.attack_id}] ${this.attack_name} - ${this.type} | pow: ${this.power} - eng: ${this.energy} - dur: ${this.duration}`;
+    static toString(){
+        let string = "";
+        for (const key in this.all_attacks) {
+            if (this.all_attacks.hasOwnProperty(key)) {
+                string += `${key} | Attack : ${this.all_attacks[key].name} | Power : ${this.all_attacks[key].power} | Type : ${this.all_attacks[key].type} \n`;
+            }
+        }
+        return string;
     }
 }

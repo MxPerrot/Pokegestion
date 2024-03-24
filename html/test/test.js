@@ -1,8 +1,6 @@
 Pokemon.import_pokemon();
 
-console.log(Type.all_types.toString());
-
-
+document.getElementById("test").innerText = Attack.toString();
 /*
 function getPokemonsByType(typeName) {
     let pokemons = [];
