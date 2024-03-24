@@ -106,6 +106,108 @@ class Pokemon {
         return Attack.all_attacks;
     }
 
+    // setters & getters
+    getPokemonId() {
+        return this.pokemon_id;
+    }
+
+    setPokemonId(pokemon_id) {
+        this.pokemon_id = pokemon_id;
+    }
+
+    getPokemonName() {
+        return this.pokemon_name;
+    }
+
+    setPokemonName(pokemon_name) {
+        this.pokemon_name = pokemon_name;
+    }
+
+    getGenerationNumber() {
+        return this.generation_number;
+    }
+
+    setGenerationNumber(generation_number) {
+        this.generation_number = generation_number;
+    }
+
+    getForm() {
+        return this.form;
+    }
+
+    setForm(form) {
+        this.form = form;
+    }
+
+    getType() {
+        return this.type;
+    }
+
+    setType(type) {
+        this.type = type;
+    }
+
+    getBaseAttack() {
+        return this.base_attack;
+    }
+
+    setBaseAttack(base_attack) {
+        this.base_attack = base_attack;
+    }
+
+    getBaseDefense() {
+        return this.base_defense;
+    }
+
+    setBaseDefense(base_defense) {
+        this.base_defense = base_defense;
+    }
+
+    getBaseStamina() {
+        return this.base_stamina;
+    }
+
+    setBaseStamina(base_stamina) {
+        this.base_stamina = base_stamina;
+    }
+
+    getChargedMoves() {
+        return this.charged_moves;
+    }
+
+    setChargedMoves(charged_moves) {
+        this.charged_moves = charged_moves;
+    }
+
+    getFastMoves() {
+        return this.fast_moves;
+    }
+
+    setFastMoves(fast_moves) {
+        this.fast_moves = fast_moves;
+    }
+
+    getEliteChargedMoves() {
+        return this.elite_charged_moves;
+    }
+
+    setEliteChargedMoves(elite_charged_moves) {
+        this.elite_charged_moves = elite_charged_moves;
+    }
+
+    getEliteFastMoves() {
+        return this.elite_fast_moves;
+    }
+
+    setEliteFastMoves(elite_fast_moves) {
+        this.elite_fast_moves = elite_fast_moves;
+    }
+
+    getAllMoves() {
+        return this.charged_moves.concat(this.fast_moves, this.elite_charged_moves, this.elite_fast_moves);
+    }
+
+    // toString
     /********************************************************************
     *                       Getters and Setters                         *
     ********************************************************************/
