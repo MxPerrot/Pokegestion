@@ -1,7 +1,6 @@
 class Type {
 
-    static all_types = [
-    ]
+    static all_types = [];
 
     constructor(type) {
         if(Type.all_types[type] == undefined) {
