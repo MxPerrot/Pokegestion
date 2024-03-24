@@ -38,6 +38,47 @@ class Attack {
         }
     }
 
+
+    /********************************************************************
+    *                       Getters and Setters                         *
+    ********************************************************************/
+
+    // name
+    getName() {return this.name;}
+    setName(name) {this.name = name;}
+
+    // move_id
+    getMoveId() {return this.move_id;}
+    setMoveId(move_id) {this.move_id = move_id;}
+
+    // power
+    getPower() {return this.power;}
+    setPower(power) {this.power = power;}
+
+    // type
+    getType() {return this.type;}
+    setType(type) {this.type = type;}
+
+    // duration
+    getDuration() {return this.duration;}
+    setDuration(duration) {this.duration = duration;}
+
+    // energy_delta
+    getEnergyDelta() {return this.energy_delta;}
+    setEnergyDelta(energy_delta) {this.energy_delta = energy_delta;}
+
+    // stamina_loss_scaler
+    getStaminaLossScaler() {return this.stamina_loss_scaler;}
+    setStaminaLossScaler(stamina_loss_scaler) {this.stamina_loss_scaler = stamina_loss_scaler;}
+
+    // critical_chance
+    getCriticalChance() {return this.critical_chance;}
+    setCriticalChance(critical_chance) {this.critical_chance = critical_chance;}
+
+    /********************************************************************
+    *                             toString                              *
+    ********************************************************************/
+
     // toString() d'instance de la classe Attack
     toString() {
         let string = "";
