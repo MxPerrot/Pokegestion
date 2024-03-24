@@ -72,9 +72,25 @@ class Pokemon {
                 }
 
                 let charged_moves = pokemon_moves[move_index].charged_moves
+                for(let y = 0; y < charged_moves.length; y++) {
+                    console.log(charged_moves[y]);
+                    new Attack(charged_moves[y]);
+                }
                 let fast_moves = pokemon_moves[move_index].fast_moves
+                for(let y = 0; y < fast_moves.length; y++) {
+                    console.log(fast_moves[y]);
+                    new Attack(fast_moves[y]);
+                }
                 let elite_charged_moves = pokemon_moves[move_index].elite_charged_moves
+                for(let y = 0; y < elite_charged_moves.length; y++) {
+                    console.log(elite_charged_moves[y]);
+                    new Attack(elite_charged_moves[y]);
+                }
                 let elite_fast_moves = pokemon_moves[move_index].elite_fast_moves
+                for(let y = 0; y < elite_fast_moves.length; y++) {
+                    console.log(elite_fast_moves[y]);
+                    new Attack(elite_fast_moves[y]);
+                }
                 // creating the new pokemon object
                 new Pokemon(pokemon_id, pokemon_name, generation_number, form, type, base_attack, base_defense, base_stamina, charged_moves, fast_moves, elite_charged_moves, elite_fast_moves);
             }
