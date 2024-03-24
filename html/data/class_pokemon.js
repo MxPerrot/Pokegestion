@@ -21,7 +21,7 @@ class Pokemon {
         // For every pokemon in pokemons.js
         for (var i = 0; i < pokemon.length; i++) {
             if (pokemon[i].form == "Normal") {
-                console.log(pokemon[i].pokemon_name);
+                //console.log(pokemon[i].pokemon_name);
                 // Base values
                 let pokemon_id = pokemon[i].pokemon_id //pokemon.js
                 let pokemon_name = pokemon[i].pokemon_name //pokemon.js
@@ -51,7 +51,7 @@ class Pokemon {
                 let typepk
                 for(let u = 0; u < pokemon_type.length; u++){
                     if(pokemon_type[u].pokemon_id === pokemon[i].pokemon_id && pokemon_type[u].form === pokemon[i].form){
-                        console.log(pokemon_type[u].type);
+                        //console.log(pokemon_type[u].type);
                         typepk = pokemon_type[u].type;
                     }
                 }
@@ -59,7 +59,7 @@ class Pokemon {
                 let move_index = 0;
                 for(let u = 0; u < pokemon_moves.length; u++){
                     if(pokemon_moves[u].pokemon_id === pokemon[i].pokemon_id && pokemon_moves[u].form === pokemon[i].form){
-                        console.log(pokemon_moves[u].charged_moves);
+                        //console.log(pokemon_moves[u].charged_moves);
                         move_index = u;
                     }
                 }
@@ -67,28 +67,28 @@ class Pokemon {
                 let generation_number = generation_num
                 let type = typepk
                 for(let y = 0; y < type.length; y++) {
-                    console.log(type[y]);
+                    //console.log(type[y]);
                     new Type(type[y]);
                 }
 
                 let charged_moves = pokemon_moves[move_index].charged_moves
                 for(let y = 0; y < charged_moves.length; y++) {
-                    console.log(charged_moves[y]);
+                    //console.log(charged_moves[y]);
                     new Attack(charged_moves[y]);
                 }
                 let fast_moves = pokemon_moves[move_index].fast_moves
                 for(let y = 0; y < fast_moves.length; y++) {
-                    console.log(fast_moves[y]);
+                    //console.log(fast_moves[y]);
                     new Attack(fast_moves[y]);
                 }
                 let elite_charged_moves = pokemon_moves[move_index].elite_charged_moves
                 for(let y = 0; y < elite_charged_moves.length; y++) {
-                    console.log(elite_charged_moves[y]);
+                    //console.log(elite_charged_moves[y]);
                     new Attack(elite_charged_moves[y]);
                 }
                 let elite_fast_moves = pokemon_moves[move_index].elite_fast_moves
                 for(let y = 0; y < elite_fast_moves.length; y++) {
-                    console.log(elite_fast_moves[y]);
+                    //console.log(elite_fast_moves[y]);
                     new Attack(elite_fast_moves[y]);
                 }
                 // creating the new pokemon object
