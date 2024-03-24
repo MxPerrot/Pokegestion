@@ -39,10 +39,22 @@ function sortPokemonByStamina(){
     Pokemon.all_pokemon.sort((a, b) => (a.getBaseStamina() > b.getBaseStamina()) ? 1 : -1);
 }
 
-// cherche les pokemons dont le type de l'attaque est le plus efficace
-getWeakestEnemies(attack){
-    
+// Fonction getWeakestEnemies(attack) retournant la liste des pokémons pour lesquel l'attaque choisie est la plus efficace. Exemple de calcul d'efficacité pour une attaque Megahorn qui est associée au type Bug. Le Pokémon Bulbasaur est de type Grass et Poison. S'il est soumis à cette attaque Megahorn, l'efficacité de cette attaque sera de 1,6 pour son type Grass et de 0,625 pour son type Poison. L'efficacité global de cette attaque est de 1,6 x 0,625 soit 1.
+function getWeakestEnemies(attack){
+    let pokemons = [];
+    for(const key in Pokemon.all_pokemon) {
+        let effectiveness = 1;
+        for(const type in Pokemon.all_pokemon[key].getType()) {
+            let currentEffectiveness = Type.all_types[type].getTypeEffectiveness()[attack.getType()];
+            effectiveness *= currentEffectiveness;
+        }
+        if(effectiveness > 1) {
+            pokemons += Pokemon.all_pokemon[key] + "\n";
+        }
+    }
+    return pokemons;
 }
 
 document.getElementById("test1").innerText = getPokemonsByType("Grass");
 document.getElementById("test2").innerText = getPokemonsByAttack("Thunder Shock");
+document.getElementById("test3").innerText = getWeakestEnemies("Thunder Shock");
