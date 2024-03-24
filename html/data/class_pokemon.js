@@ -203,6 +203,10 @@ class Pokemon {
         this.elite_fast_moves = elite_fast_moves;
     }
 
+    getAllMoves() {
+        return this.charged_moves.concat(this.fast_moves, this.elite_charged_moves, this.elite_fast_moves);
+    }
+
     // toString
     toString() {
         let string =  this.pokemon_id + " | " + this.pokemon_name + " | Gen " + this.generation_number + " | "
