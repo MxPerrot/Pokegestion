@@ -27,12 +27,31 @@ class Type {
         return string;
     }
 
+    /********************************************************************
+    *                        Getters and Setters                        *
+    ********************************************************************/
+
+    // type
+    getType() {return this.type;}
+    setType(type) {this.type = type;}
+
+    // type_effectiveness
+    getTypeEffectiveness() {return this.type_effectiveness;}
+    setTypeEffectiveness(type_effectiveness) {this.type_effectiveness = type_effectiveness;}
+
+
+    /********************************************************************
+    *                              toString                             *
+    ********************************************************************/
+
+    // toString() d'instance de la classe Type
     toString() {
         let string = "";
         string += `Type : ${this.type} | Effectivness : {\n ${this.displayArray()}} \n`;
         return string;
     }
 
+    // toString() de la classe Type
     static toString(){
         let string = "";
         for (const key in this.all_types) {

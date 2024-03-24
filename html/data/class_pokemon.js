@@ -208,6 +208,63 @@ class Pokemon {
     }
 
     // toString
+    /********************************************************************
+    *                       Getters and Setters                         *
+    ********************************************************************/
+
+    // pokemon_id
+    getPokemonId() {return this.pokemon_id;}
+    setPokemonId(pokemon_id) {this.pokemon_id = pokemon_id;}
+
+    // pokemon_name
+    getPokemonName() {return this.pokemon_name;}
+    setPokemonName(pokemon_name) {this.pokemon_name = pokemon_name;}
+
+    // generation_number
+    getGenerationNumber() {return this.generation_number;}
+    setGenerationNumber(generation_number) {this.generation_number = generation_number;}
+
+    // form
+    getForm() {return this.form;}
+    setForm(form) {this.form = form;}
+
+    // type
+    getType() {return this.type;}
+    setType(type) {this.type = type;}
+
+    // base_attack
+    getBaseAttack() {return this.base_attack;}
+    setBaseAttack(base_attack) {this.base_attack = base_attack;}
+
+    // base_defense
+    getBaseDefense() {return this.base_defense;}
+    setBaseDefense(base_defense) {this.base_defense = base_defense;}
+
+    // base_stamina
+    getBaseStamina() {return this.base_stamina;}
+    setBaseStamina(base_stamina) {this.base_stamina = base_stamina;}
+
+    // charged_moves
+    getChargedMoves() {return this.charged_moves;}
+    setChargedMoves(charged_moves) {this.charged_moves = charged_moves;}
+
+    // fast_moves
+    getFastMoves() {return this.fast_moves;}
+    setFastMoves(fast_moves) {this.fast_moves = fast_moves;}
+
+    // elite charged moves
+    getEliteChargedMoves() {return this.elite_charged_moves;}
+    setEliteChargedMoves(elite_charged_moves) {this.elite_charged_moves = elite_charged_moves;}
+
+    // elite fast moves
+    getEliteFastMoves() {return this.elite_fast_moves;}
+    setEliteFastMoves(elite_fast_moves) {this.elite_fast_moves = elite_fast_moves;}
+
+    /********************************************************************
+    *                             toString                              *
+    ********************************************************************/
+
+    // toString de l'instance de la classe Pokemon
     toString() {
         let string =  this.pokemon_id + " | " + this.pokemon_name + " | Gen " + this.generation_number + " | "
                     + this.form + " form | " + this.base_attack + " attack | " + this.base_defense + " defense | " 
@@ -215,6 +272,7 @@ class Pokemon {
         return string;
     }
 
+    // toString de la classe Pokemon
     static toString(){
         let string = "";
         for (const key in this.all_pokemon) {
