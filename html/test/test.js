@@ -203,6 +203,7 @@ function test1() {
         console.table(result);
         generateTable(result);
     } else {
+        alert("ERROR: No type selected.");
         console.log("ERROR: No type selected.");
     }
 }
@@ -213,6 +214,7 @@ function test2() {
         result = getPokemonsByAttack(selectedAttack);
         console.table(result);
     } else {
+        alert("ERROR: No attack selected.");
         console.log("ERROR: No attack selected.");
     }
 }
@@ -223,6 +225,7 @@ function test3() {
         result = getAttacksByType(selectedType);
         console.table(result);
     } else {
+        alert("ERROR: No type selected.");
         console.log("ERROR: No type selected.");
     }
 }
@@ -243,6 +246,7 @@ function test6() {
         result = getWeakestEnemies(selectedAttack);
         console.table(result);
     } else {
+        alert("ERROR: No attack selected.");
         console.log("ERROR: No attack selected.");
     }
 }
@@ -253,6 +257,7 @@ function test7() {
             result = getBestAttackTypesForEnemy(selectedPokemon);
             console.table(result);
     } else {
+        alert("ERROR: No pokemon selected.");
         console.log("ERROR: No pokemon selected.");
     }
 }
