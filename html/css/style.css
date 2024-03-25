@@ -13,20 +13,13 @@
     --light-color: #f8f9fa;
     --light-gray-color: #e7e4e4;
     --dark-color: #343a40;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-    --container-padding: 15px;
 }
 
-
-
-/* Use a modern font */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 
 
@@ -34,15 +27,12 @@ body {
 *                               HEADER                              *
 ********************************************************************/
 
-/* Set the header to use the primary color as the background color */
 header {
     background-color: var(--primary-color);
     color: white;
     padding: 10px 0;
     margin-bottom: 50px;
 }
-
-/* Title centered */
 
 header h1 {
     text-align: center;
@@ -53,20 +43,15 @@ header h1 {
 *                                MAIN                               *
 ********************************************************************/
 
-/* Set the body to use the light color as the background color */
-body {
-    background-color: white;
-}
-
 main {
     margin: 0px 30px 100px 30px;
 }
+
 
 /*********
 * Button *
 *********/
 
-/* Set the button to use the primary color as the background color */
 button {
     background-color: var(--primary-color);
     color: white;
@@ -77,11 +62,11 @@ button {
     transition: all 0.2s;
 }
 
+
 /********
 * Input *
 ********/
 
-/* Set the input to use the light gray color as the background color */
 input {
     background-color: var(--light-gray-color);
     border: none;
@@ -92,6 +77,8 @@ input {
 input:active, input:focus {
     outline: none;
 }
+
+
 /*************
 * Test block *
 *************/
@@ -121,15 +108,15 @@ input:active, input:focus {
     right: 10px;
 }
 
-/* Make link change color on click */
 .test-link:active {
     color: var(--secondary-color);
 }
 
+
 /***************
 * Table output *
 ***************/
-/* A modern and lightweight table design */
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -153,12 +140,12 @@ table tr:hover {
     background-color: #d3d3d3;
 }
 
+
 /***********
 * Controls *
 ***********/
 
 #controls * {
-    /* vertical margin */
     margin: 20px 0;
 }
 
@@ -167,28 +154,20 @@ table tr:hover {
 *                               FOOTER                              *
 ********************************************************************/
 
-/* Center all elements in the footer using flexboxes */
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-/* Set footer elements to have an horizontal margin of 15px */
-footer * {
-    margin: 0 15px;
-}
-
-/* Set the footer to use the dark color as the background color */
-footer {
     background-color: var(--dark-color);
     color: white;
     padding: 10px 0;
-}
 
-/* Set the footer to be on the bottom of the page */
-footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+footer * {
+    margin: 0 15px;
 }
