@@ -4,7 +4,7 @@ function getPokemonsByType(typeName) {
     let pokemons = [];
     for(const key in Pokemon.all_pokemon) {
         if(Pokemon.all_pokemon[key].getType().includes(typeName)) {
-            pokemons += Pokemon.all_pokemon[key] + "\n";
+            pokemons.push(Pokemon.all_pokemon[key]);
         }
     }
     return pokemons;
@@ -14,7 +14,7 @@ function getPokemonsByAttack(attackName)    {
     let pokemons = [];
     for(const key in Pokemon.all_pokemon) {
         if(Pokemon.all_pokemon[key].getAllMoves().includes(attackName)) {
-            pokemons += Pokemon.all_pokemon[key];
+            pokemons.push(Pokemon.all_pokemon[key]);
         }
     }
     return pokemons;
@@ -24,7 +24,7 @@ function getAttacksByType(typeName) {
     let attacks = [];
     for(const key in Attack.all_attacks) {
         if(Attack.all_attacks[key].getType == typeName) {
-            attacks += Attack.all_attacks[key] + "\n";
+            attacks.push(Attack.all_attacks[key]);
         }
     }
     return attacks;
@@ -55,7 +55,7 @@ function getWeakestEnemies(attack){
             effectiveness *= currentEffectiveness[attackClass.getType()];
         }
         if(effectiveness > 1) {
-            pokemons += Pokemon.all_pokemon[key] + "\n";
+            pokemons.push(Pokemon.all_pokemon[key]);
         }
     }
     return pokemons;
