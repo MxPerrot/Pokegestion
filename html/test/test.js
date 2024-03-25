@@ -16,7 +16,7 @@ function getPokemonsByType(typeName) {
             pokemons.push(Pokemon.getPokemons()[key]);
         }
     }
-
+    
     if (pokemons.length === 0) {
         throw new Error("Type not found");
     }
@@ -336,6 +336,8 @@ function test6() {
             let result = getWeakestEnemies(selectedAttack);
             generateTable(result);
             console.table(result);
+
+    // Error handling
         } catch (error) {
             alert("ERROR: Please enter a valid attack. " + selectedAttack + " not found.");
             console.log("ERROR: " + error);
@@ -361,6 +363,8 @@ function test7() {
             let result = getBestAttackTypesForEnemy(selectedPokemon);
             generateTable(result);
             console.table(result);
+
+    // Error handling
         } catch (error) {
             alert("ERROR: Please enter a valid pokemon. " + selectedPokemon + " not found.");
             console.log("ERROR: " + error);
