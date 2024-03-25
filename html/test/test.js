@@ -11,9 +11,9 @@ Pokemon.import_pokemon();
 
 function getPokemonsByType(typeName) {
     let pokemons = [];
-    for(const key in Pokemon.all_pokemon) {
-        if(Pokemon.all_pokemon[key].getType().includes(typeName)) {
-            pokemons.push(Pokemon.all_pokemon[key]);
+    for(const key in Pokemon.getPokemons()) {
+        if(Pokemon.getPokemons()[key].getType().includes(typeName)) {
+            pokemons.push(Pokemon.getPokemons()[key]);
         }
     }
     return pokemons;
@@ -21,9 +21,9 @@ function getPokemonsByType(typeName) {
 
 function getPokemonsByAttack(attackName)    {
     let pokemons = [];
-    for(const key in Pokemon.all_pokemon) {
-        if(Pokemon.all_pokemon[key].getAllMoves().includes(attackName)) {
-            pokemons.push(Pokemon.all_pokemon[key]);
+    for(const key in Pokemon.getPokemons()) {
+        if(Pokemon.getPokemons()[key].getAllMoves().includes(attackName)) {
+            pokemons.push(Pokemon.getPokemons()[key]);
         }
     }
     return pokemons;
@@ -40,7 +40,7 @@ function getAttacksByType(typeName) {
 }
 
 function sortPokemonByName() {
-    let pokemons = Pokemon.all_pokemon;
+    let pokemons = Pokemon.getPokemons();
     pokemons.sort((a, b) => {
         return a.getPokemonName().localeCompare(b.getPokemonName());
     });
@@ -48,7 +48,7 @@ function sortPokemonByName() {
 }
 
 function sortPokemonByStamina() {
-    let pokemons = Pokemon.all_pokemon;
+    let pokemons = Pokemon.getPokemons();
     pokemons.sort((a, b) => {
         return b.getBaseStamina() - a.getBaseStamina();
     });
@@ -63,16 +63,16 @@ function getWeakestEnemies(attack){
             attackClass = Attack.all_attacks[key];
         }
     }
-    for(const key in Pokemon.all_pokemon) {
+    for(const key in Pokemon.getPokemons()) {
         let effectiveness = 1;
-        for(const type in Pokemon.all_pokemon[key].getType()) {
-            let typelist = Type.all_types[Pokemon.all_pokemon[key].getType()[type]];
+        for(const type in Pokemon.getPokemons()[key].getType()) {
+            let typelist = Type.all_types[Pokemon.getPokemons()[key].getType()[type]];
             let currentEffectiveness = typelist.getTypeEffectiveness();
             //console.log(attackClass.getType());
             effectiveness *= currentEffectiveness[attackClass.getType()];
         }
         if(effectiveness > 1) {
-            pokemons.push(Pokemon.all_pokemon[key]);
+            pokemons.push(Pokemon.getPokemons()[key]);
         }
     }
     return pokemons;
@@ -81,9 +81,9 @@ function getWeakestEnemies(attack){
 function getBestAttackTypesForEnemy(name){
     let attacks = [];
     let pokemon;
-    for(const key in Pokemon.all_pokemon) {
-        if(Pokemon.all_pokemon[key].getPokemonName() == name) {
-            pokemon = Pokemon.all_pokemon[key];
+    for(const key in Pokemon.getPokemons()) {
+        if(Pokemon.getPokemons()[key].getPokemonName() == name) {
+            pokemon = Pokemon.getPokemons()[key];
         }
     }
     if (pokemon == undefined) {
@@ -178,8 +178,8 @@ function generateTable(data) {
 
 // function printOptionsSelectorPokemon(selectorId) {
 //     let string = "";
-//     for(const key in Pokemon.all_pokemon) {
-//         string += `<option value="${Pokemon.all_pokemon[key].getPokemonName()}">${Pokemon.all_pokemon[key].getPokemonName()}</option>`;
+//     for(const key in Pokemon.getPokemons()) {
+//         string += `<option value="${Pokemon.getPokemons()[key].getPokemonName()}">${Pokemon.getPokemons()[key].getPokemonName()}</option>`;
 //     }
 //     document.getElementById(selectorId).innerHTML = string;
 // }
@@ -197,11 +197,17 @@ function generateTable(data) {
 ********************************************************************/
 
 function test1() {
+    clearTable();
     let selectedType = document.getElementById("input-text").value;
     if (selectedType != undefined && selectedType != null && selectedType != "") {
-        result = getPokemonsByType(selectedType);
-        console.table(result);
-        generateTable(result);
+        try {
+            let result = getPokemonsByType(selectedType);
+            console.table(result);
+            generateTable(result);
+        } catch (error) {
+            alert("ERROR: Please enter a valid type.");
+            console.log("ERROR: " + error);
+        }
     } else {
         alert("ERROR: No type selected.");
         console.log("ERROR: No type selected.");
@@ -209,10 +215,17 @@ function test1() {
 }
 
 function test2() {
+    clearTable();
     let selectedAttack = document.getElementById("input-text").value;
     if (selectedAttack != undefined && selectedAttack != null && selectedAttack != "") {
-        result = getPokemonsByAttack(selectedAttack);
-        console.table(result);
+        try {
+            let result = getPokemonsByAttack(selectedAttack);
+            console.table(result);
+            generateTable(result);          
+        } catch (error) {
+            alert("ERROR: Please enter a valid attack.");
+            console.log("ERROR: " + error);
+        }
     } else {
         alert("ERROR: No attack selected.");
         console.log("ERROR: No attack selected.");
@@ -220,10 +233,17 @@ function test2() {
 }
 
 function test3() {
+    clearTable();
     let selectedType = document.getElementById("input-text").value;
     if (selectedType != undefined && selectedType != null && selectedType != "") {
-        result = getAttacksByType(selectedType);
-        console.table(result);
+        try {
+            let result = getAttacksByType(selectedType);
+            console.table(result);
+            generateTable(result);
+        } catch (error) {
+            alert("ERROR: Please enter a valid type.");
+            console.log("ERROR: " + error);
+        }
     } else {
         alert("ERROR: No type selected.");
         console.log("ERROR: No type selected.");
@@ -231,20 +251,40 @@ function test3() {
 }
 
 function test4() {
-    sortPokemonByName();
-    console.table(Pokemon.all_pokemon);
+    clearTable();
+    try {
+        let result = sortPokemonByName();
+        console.table(result);
+        generateTable(result);
+    } catch (error) {
+        alert("ERROR: " + error);
+        console.log("ERROR: " + error);
+    }
 }
 
 function test5() {
-    sortPokemonByStamina();
-    console.table(Pokemon.all_pokemon);
+    clearTable();
+    try {
+        let result = sortPokemonByStamina();
+        console.table(result);
+        generateTable(result);
+    } catch (error) {
+        alert("ERROR: " + error);
+        console.log("ERROR: " + error);
+    }
 }
 
 function test6() {
+    clearTable();
     let selectedAttack = document.getElementById("input-text").value;
     if (selectedAttack != undefined && selectedAttack != null && selectedAttack != "") {
-        result = getWeakestEnemies(selectedAttack);
-        console.table(result);
+        try {
+            let result = getWeakestEnemies(selectedAttack);
+            console.table(result);
+        } catch (error) {
+            alert("ERROR: Please enter a valid attack.");
+            console.log("ERROR: " + error);
+        }
     } else {
         alert("ERROR: No attack selected.");
         console.log("ERROR: No attack selected.");
@@ -252,10 +292,16 @@ function test6() {
 }
 
 function test7() {
+    clearTable();
     let selectedPokemon = document.getElementById("input-text").value;
     if (selectedPokemon != undefined && selectedPokemon != null && selectedPokemon != "") {
-            result = getBestAttackTypesForEnemy(selectedPokemon);
+        try {
+            let result = getBestAttackTypesForEnemy(selectedPokemon);
             console.table(result);
+        } catch (error) {
+            alert("ERROR: Please enter a valid pokemon.");
+            console.log("ERROR: " + error);
+        }
     } else {
         alert("ERROR: No pokemon selected.");
         console.log("ERROR: No pokemon selected.");
