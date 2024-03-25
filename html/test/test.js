@@ -277,6 +277,7 @@ function test6() {
         try {
             let result = getWeakestEnemies(selectedAttack);
             console.table(result);
+            generateTable(result);
         } catch (error) {
             alert("ERROR: Please enter a valid attack. " + selectedAttack + " not found.");
             console.log("ERROR: " + error);
@@ -294,6 +295,7 @@ function test7() {
         try {
             let result = getBestAttackTypesForEnemy(selectedPokemon);
             console.table(result);
+            generateTable(result);
         } catch (error) {
             alert("ERROR: Please enter a valid pokemon. " + selectedPokemon + " not found.");
             console.log("ERROR: " + error);
