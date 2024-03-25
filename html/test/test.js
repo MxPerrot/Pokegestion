@@ -1,6 +1,5 @@
 Pokemon.import_pokemon();
 
-
 function getPokemonsByType(typeName) {
     let pokemons = [];
     for(const key in Pokemon.all_pokemon) {
@@ -15,7 +14,7 @@ function getPokemonsByAttack(attackName)    {
     let pokemons = [];
     for(const key in Pokemon.all_pokemon) {
         if(Pokemon.all_pokemon[key].getAllMoves().includes(attackName)) {
-            pokemons += Pokemon.all_pokemon[key] + "\n";
+            pokemons += Pokemon.all_pokemon[key];
         }
     }
     return pokemons;
@@ -62,7 +61,6 @@ function getWeakestEnemies(attack){
     return pokemons;
 }
 
-// retourne la liste des type d'attaque les plus efficaces contre un pokemon donné (getWeakestEnemies mais pour les attaques)
 function getBestAttackTypesForEnemy(name){
     let attacks = [];
     let pokemon;
@@ -86,7 +84,98 @@ function getBestAttackTypesForEnemy(name){
     return attacks;
 }
 
-document.getElementById("test1").innerText = getPokemonsByType("Grass");
-document.getElementById("test2").innerText = getPokemonsByAttack("Thunder Shock");
-document.getElementById("test3").innerText = getWeakestEnemies("Thunder Shock");
-document.getElementById("test4").innerText = getBestAttackTypesForEnemy("Mewtwo");
+// OBSOLETE
+// Print the options of the selector for the test.html.old
+
+// function printOptionsSelectorType(selectorId) {
+//     let string = "";
+//     for(const key in Pokemon.getTypes()) {
+//         string += `<option value="${Pokemon.getTypes()[key].getType()}">${Pokemon.getTypes()[key].getType()}</option>`;
+//     }
+//     document.getElementById(selectorId).innerHTML = string;
+// }
+
+// function printOptionsSelectorAttack(selectorId) {
+//     let string = "";
+//     for(const key in Pokemon.getAttacks()) {
+//         string += `<option value="${Pokemon.getAttacks()[key].getName()}">${Pokemon.getAttacks()[key].getName()}</option>`;
+//     }
+//     document.getElementById(selectorId).innerHTML = string;
+// }
+
+// function printOptionsSelectorPokemon(selectorId) {
+//     let string = "";
+//     for(const key in Pokemon.all_pokemon) {
+//         string += `<option value="${Pokemon.all_pokemon[key].getPokemonName()}">${Pokemon.all_pokemon[key].getPokemonName()}</option>`;
+//     }
+//     document.getElementById(selectorId).innerHTML = string;
+// }
+
+// // initialize the selectors
+// printOptionsSelectorType("test1-input-select");
+// printOptionsSelectorAttack("test2-input-select");
+// printOptionsSelectorType("test3-input-select");
+// printOptionsSelectorAttack("test6-input-select");
+// printOptionsSelectorPokemon("test7-input-select");
+
+
+function test1() {
+    let selectedType = document.getElementById("input-text").value;
+    if (selectedType != undefined && selectedType != null && selectedType != "") {
+        result = getPokemonsByType(selectedType);
+        console.table(result);
+    } else {
+        console.log("ERROR: No type selected.");
+    }
+}
+
+function test2() {
+    let selectedAttack = document.getElementById("input-text").value;
+    if (selectedAttack != undefined && selectedAttack != null && selectedAttack != "") {
+        result = getPokemonsByAttack(selectedAttack);
+        console.table(result);
+    } else {
+        console.log("ERROR: No attack selected.");
+    }
+}
+
+function test3() {
+    let selectedType = document.getElementById("input-text").value;
+    if (selectedType != undefined && selectedType != null && selectedType != "") {
+        result = getAttacksByType(selectedType);
+        console.table(result);
+    } else {
+        console.log("ERROR: No type selected.");
+    }
+}
+
+function test4() {
+    sortPokemonByName();
+    console.table(Pokemon.all_pokemon);
+}
+
+function test5() {
+    sortPokemonByStamina();
+    console.table(Pokemon.all_pokemon);
+}
+
+function test6() {
+    let selectedAttack = document.getElementById("input-text").value;
+    if (selectedAttack != undefined && selectedAttack != null && selectedAttack != "") {
+        result = getWeakestEnemies(selectedAttack);
+        console.table(result);
+    } else {
+        console.log("ERROR: No attack selected.");
+    }
+}
+
+function test7() {
+    let selectedPokemon = document.getElementById("input-text").value;
+    if (selectedPokemon != undefined && selectedPokemon != null && selectedPokemon != "") {
+        // check if pokemon exists
+            result = getBestAttackTypesForEnemy(selectedPokemon);
+            console.table(result);
+    } else {
+        console.log("ERROR: No pokemon selected.");
+    }
+}
