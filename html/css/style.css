@@ -58,41 +58,43 @@ body {
     background-color: white;
 }
 
-/* Left margin */
 main {
-    margin-left: 15px;
-    margin-bottom: 100px;
+    margin: 0px 30px 100px 30px;
 }
 
+/*********
+* Button *
+*********/
 
+/* Set the button to use the primary color as the background color */
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/********
+* Input *
+********/
+
+/* Set the input to use the light gray color as the background color */
+input {
+    background-color: var(--light-gray-color);
+    border: none;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+input:active, input:focus {
+    outline: none;
+}
 /*************
 * Test block *
 *************/
-
-.test-block {
-    margin-left: 30px;
-    margin-right: 400px;
-}
-
-.test-label {
-    margin-left: 30px;
-    color: var(--primary-color);
-}
-
-.test-result {
-
-    margin: 10px 0px;
-    padding: 20px;
-    
-    overflow-y:scroll;
-    max-height: 500px;
-
-    background-color: rgb(247, 247, 244);
-    border-radius: 25px 0px 0px 25px ;
-    border: var(--secondary-color) solid 1px;
-
-    font-family: 'Consolas', 'Courier New', monospace;
-}
 
 .test-link {
     display: block;
@@ -123,6 +125,43 @@ main {
 .test-link:active {
     color: var(--secondary-color);
 }
+
+/***************
+* Table output *
+***************/
+/* A modern and lightweight table design */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid var(--light-gray-color);
+    padding: 8px;
+}
+
+table th {
+    background-color: var(--light-gray-color);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--light-gray-color);
+}
+
+table tr:hover {
+    background-color: #d3d3d3;
+}
+
+/***********
+* Controls *
+***********/
+
+#controls * {
+    /* vertical margin */
+    margin: 20px 0;
+}
+
 
 /********************************************************************
 *                               FOOTER                              *
