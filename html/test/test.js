@@ -16,6 +16,11 @@ function getPokemonsByType(typeName) {
             pokemons.push(Pokemon.getPokemons()[key]);
         }
     }
+
+    if (pokemons.length === 0) {
+        throw new Error("Type not found");
+    }
+
     return pokemons;
 }
 
@@ -26,16 +31,26 @@ function getPokemonsByAttack(attackName)    {
             pokemons.push(Pokemon.getPokemons()[key]);
         }
     }
+
+    if (pokemons.length === 0) {
+        throw new Error("Attack not found");
+    }
+
     return pokemons;
 }
 
 function getAttacksByType(typeName) {
     let attacks = [];
     for(const key in Pokemon.getAttacks()) {
-        if(Pokemon.getAttacks()[key].getType == typeName) {
+        if(Pokemon.getAttacks()[key].getType() == typeName) {
             attacks.push(Pokemon.getAttacks()[key]);
         }
     }
+
+    if (attacks.length === 0) {
+        throw new Error("Type not found");
+    }
+
     return attacks;
 }
 
@@ -121,7 +136,7 @@ function generateTable(data) {
     const headerRow = document.createElement('tr');
     
     // Assuming all objects in the array have the same keys, use the keys of the first object for column headers
-    Object.keys(data[0]).forEach(key => {
+    Object.keys(data[0] || {}).forEach(key => {
         const th = document.createElement('th');
         th.textContent = key;
         headerRow.appendChild(th);
@@ -193,13 +208,22 @@ function generateTable(data) {
 ********************************************************************/
 
 function test1() {
+    // Clear the table
     clearTable();
+
+    // Get the selected type
     let selectedType = document.getElementById("input-text").value;
+
+    // Check if the selected type is not empty
     if (selectedType != undefined && selectedType != null && selectedType != "") {
         try {
+
+            // Get the pokemons by type and display them
             let result = getPokemonsByType(selectedType);
             console.table(result);
             generateTable(result);
+            
+    // Error handling
         } catch (error) {
             alert("ERROR: Please enter a valid type. " + selectedType + " not found.");
             console.log("ERROR: " + error);
@@ -211,13 +235,21 @@ function test1() {
 }
 
 function test2() {
+    // Clear the table
     clearTable();
+
+    // Get the selected attack
     let selectedAttack = document.getElementById("input-text").value;
+
+    // Check if the selected attack is not empty
     if (selectedAttack != undefined && selectedAttack != null && selectedAttack != "") {
         try {
+            // Get the pokemons by attack and display them
             let result = getPokemonsByAttack(selectedAttack);
             console.table(result);
-            generateTable(result);          
+            generateTable(result);  
+   
+    // Error handling
         } catch (error) {
             alert("ERROR: Please enter a valid attack. " + selectedAttack + " not found.");
             console.log("ERROR: " + error);
@@ -229,17 +261,27 @@ function test2() {
 }
 
 function test3() {
+    // Clear the table
     clearTable();
+
+    // Get the selected type
     let selectedType = document.getElementById("input-text").value;
+
+    // Check if the selected type is not empty
     if (selectedType != undefined && selectedType != null && selectedType != "") {
+
         try {
+            // Get the attacks by type and display them
             let result = getAttacksByType(selectedType);
             console.table(result);
             generateTable(result);
+
+    // Error handling
         } catch (error) {
             alert("ERROR: Please enter a valid type. " + selectedType + " not found.");
             console.log("ERROR: " + error);
         }
+        
     } else {
         alert("ERROR: No type selected.");
         console.log("ERROR: No type selected.");
@@ -247,11 +289,16 @@ function test3() {
 }
 
 function test4() {
+    // Clear the table
     clearTable();
+    
     try {
+        // Get the pokemons sorted by name and display them
         let result = sortPokemonByName();
         console.table(result);
         generateTable(result);
+
+    // Error handling
     } catch (error) {
         alert("ERROR: " + error);
         console.log("ERROR: " + error);
@@ -259,11 +306,16 @@ function test4() {
 }
 
 function test5() {
+    // Clear the table
     clearTable();
+
     try {
+        // Get the pokemons sorted by stamina and display them
         let result = sortPokemonByStamina();
         console.table(result);
         generateTable(result);
+
+    // Error handling
     } catch (error) {
         alert("ERROR: " + error);
         console.log("ERROR: " + error);
@@ -271,12 +323,21 @@ function test5() {
 }
 
 function test6() {
+    // Clear the table
     clearTable();
+
+    // Get the selected attack
     let selectedAttack = document.getElementById("input-text").value;
+
+    // Check if the selected attack is not empty
     if (selectedAttack != undefined && selectedAttack != null && selectedAttack != "") {
         try {
+            // Get the weakest enemies and display them
             let result = getWeakestEnemies(selectedAttack);
+            generateTable(result);
             console.table(result);
+
+    // Error handling
         } catch (error) {
             alert("ERROR: Please enter a valid attack. " + selectedAttack + " not found.");
             console.log("ERROR: " + error);
@@ -288,12 +349,22 @@ function test6() {
 }
 
 function test7() {
+    // Clear the table
     clearTable();
+
+    // Get the selected pokemon
     let selectedPokemon = document.getElementById("input-text").value;
+
+    // Check if the selected pokemon is not empty
     if (selectedPokemon != undefined && selectedPokemon != null && selectedPokemon != "") {
         try {
+
+            // Get the best attack types for the enemy and display them
             let result = getBestAttackTypesForEnemy(selectedPokemon);
+            generateTable(result);
             console.table(result);
+    
+    // Error handling
         } catch (error) {
             alert("ERROR: Please enter a valid pokemon. " + selectedPokemon + " not found.");
             console.log("ERROR: " + error);
