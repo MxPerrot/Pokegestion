@@ -51,7 +51,7 @@ function getWeakestEnemies(attack){
         for(const type in Pokemon.all_pokemon[key].getType()) {
             let typelist = Type.all_types[Pokemon.all_pokemon[key].getType()[type]];
             let currentEffectiveness = typelist.getTypeEffectiveness();
-            console.log(attackClass.getType());
+            //console.log(attackClass.getType());
             effectiveness *= currentEffectiveness[attackClass.getType()];
         }
         if(effectiveness > 1) {
@@ -77,8 +77,8 @@ function getBestAttackTypesForEnemy(name){
             effectiveness *= currentEffectiveness[Attack.all_attacks[key].getType()];
         }
         if(effectiveness > 1) {
-            attacks += Attack.all_attacks[key] + "\n";
-            console.log(attacks);
+            attacks.push(Attack.all_attacks[key]);
+            //console.log(attacks);
         }
     }
     return attacks;
