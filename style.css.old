@@ -1,0 +1,167 @@
+
+/********************************************************************
+*                               GLOBAL                              *
+********************************************************************/
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --light-gray-color: #e7e4e4;
+    --dark-color: #343a40;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --container-padding: 15px;
+}
+
+
+
+/* Use a modern font */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/********************************************************************
+*                               HEADER                              *
+********************************************************************/
+
+/* Set the header to use the primary color as the background color */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 50px;
+}
+
+/* Title centered */
+
+header h1 {
+    text-align: center;
+}
+
+
+/********************************************************************
+*                                MAIN                               *
+********************************************************************/
+
+/* Set the body to use the light color as the background color */
+body {
+    background-color: white;
+}
+
+/* Left margin */
+main {
+    margin-left: 15px;
+    margin-bottom: 100px;
+}
+
+
+/*************
+* Test block *
+*************/
+
+.test-block {
+    margin-left: 30px;
+    margin-right: 400px;
+}
+
+
+
+.test-result {
+
+    margin: 10px 0px;
+    padding: 20px;
+    
+    overflow-y:scroll;
+    max-height: 500px;
+
+    background-color: rgb(247, 247, 244);
+    border-radius: 25px 0px 0px 25px ;
+    border: var(--secondary-color) solid 1px;
+
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+.test-link {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-decoration: none;
+    /* Size of a h2 text */
+    font-size: 1.5em;
+    
+    padding: 16px;
+    width: 80px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.test-link:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;  
+    top: 14px;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.test-link {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.test-link:hover {
+    padding-right: 24px;
+    padding-left:8px;
+}
+
+.test-link:hover:after {
+    opacity: 1;
+    right: 10px;
+}
+
+.test-input-select {
+    color: var(--primary-color);
+    border: none;
+}
+
+/********************************************************************
+*                               FOOTER                              *
+********************************************************************/
+
+/* Center all elements in the footer using flexboxes */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Set footer elements to have an horizontal margin of 15px */
+footer * {
+    margin: 0 15px;
+}
+
+/* Set the footer to use the dark color as the background color */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 10px 0;
+}
+
+/* Set the footer to be on the bottom of the page */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
