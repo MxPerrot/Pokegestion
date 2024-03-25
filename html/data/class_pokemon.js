@@ -117,6 +117,8 @@ class Pokemon {
     /********************************************************************
     *                       Getters and Setters                         *
     ********************************************************************/
+    // méthode getPokemons() pour retourner une liste des pokemons de la classe Pokemon
+    static getPokemons() {return Pokemon.all_pokemon;}
 
     // méthode getTypes() pour retourner une liste des types de la classe Type
     static getTypes() {return Type.all_types;}
