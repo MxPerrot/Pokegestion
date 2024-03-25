@@ -31,9 +31,9 @@ function getPokemonsByAttack(attackName)    {
 
 function getAttacksByType(typeName) {
     let attacks = [];
-    for(const key in Attack.all_attacks) {
-        if(Attack.all_attacks[key].getType == typeName) {
-            attacks.push(Attack.all_attacks[key]);
+    for(const key in Pokemon.getAttacks()) {
+        if(Pokemon.getAttacks()[key].getType == typeName) {
+            attacks.push(Pokemon.getAttacks()[key]);
         }
     }
     return attacks;
@@ -58,15 +58,15 @@ function sortPokemonByStamina() {
 function getWeakestEnemies(attack){
     let pokemons = [];
     let attackClass;
-    for(const key in Attack.all_attacks) {
-        if(Attack.all_attacks[key].getName() == attack) {
-            attackClass = Attack.all_attacks[key];
+    for(const key in Pokemon.getAttacks()) {
+        if(Pokemon.getAttacks()[key].getName() == attack) {
+            attackClass = Pokemon.getAttacks()[key];
         }
     }
     for(const key in Pokemon.getPokemons()) {
         let effectiveness = 1;
         for(const type in Pokemon.getPokemons()[key].getType()) {
-            let typelist = Type.all_types[Pokemon.getPokemons()[key].getType()[type]];
+            let typelist = Pokemon.getTypes()[Pokemon.getPokemons()[key].getType()[type]];
             let currentEffectiveness = typelist.getTypeEffectiveness();
             //console.log(attackClass.getType());
             effectiveness *= currentEffectiveness[attackClass.getType()];
@@ -86,19 +86,15 @@ function getBestAttackTypesForEnemy(name){
             pokemon = Pokemon.getPokemons()[key];
         }
     }
-    if (pokemon == undefined) {
-        console.log(`ERROR: Pokemon not found. ${name} does not exist.`);
-        return;
-    }
-    for(const key in Attack.all_attacks) {
+    for(const key in Pokemon.getAttacks()) {
         let effectiveness = 1;
         for(const type in pokemon.getType()) {
-            let typelist = Type.all_types[pokemon.getType()[type]];
+            let typelist = Pokemon.getTypes()[pokemon.getType()[type]];
             let currentEffectiveness = typelist.getTypeEffectiveness();
-            effectiveness *= currentEffectiveness[Attack.all_attacks[key].getType()];
+            effectiveness *= currentEffectiveness[Pokemon.getAttacks()[key].getType()];
         }
         if(effectiveness > 1) {
-            attacks.push(Attack.all_attacks[key]);
+            attacks.push(Pokemon.getAttacks()[key]);
             //console.log(attacks);
         }
     }
@@ -205,7 +201,7 @@ function test1() {
             console.table(result);
             generateTable(result);
         } catch (error) {
-            alert("ERROR: Please enter a valid type.");
+            alert("ERROR: Please enter a valid type. " + selectedType + " not found.");
             console.log("ERROR: " + error);
         }
     } else {
@@ -223,7 +219,7 @@ function test2() {
             console.table(result);
             generateTable(result);          
         } catch (error) {
-            alert("ERROR: Please enter a valid attack.");
+            alert("ERROR: Please enter a valid attack. " + selectedAttack + " not found.");
             console.log("ERROR: " + error);
         }
     } else {
@@ -241,7 +237,7 @@ function test3() {
             console.table(result);
             generateTable(result);
         } catch (error) {
-            alert("ERROR: Please enter a valid type.");
+            alert("ERROR: Please enter a valid type. " + selectedType + " not found.");
             console.log("ERROR: " + error);
         }
     } else {
@@ -282,7 +278,7 @@ function test6() {
             let result = getWeakestEnemies(selectedAttack);
             console.table(result);
         } catch (error) {
-            alert("ERROR: Please enter a valid attack.");
+            alert("ERROR: Please enter a valid attack. " + selectedAttack + " not found.");
             console.log("ERROR: " + error);
         }
     } else {
@@ -299,7 +295,7 @@ function test7() {
             let result = getBestAttackTypesForEnemy(selectedPokemon);
             console.table(result);
         } catch (error) {
-            alert("ERROR: Please enter a valid pokemon.");
+            alert("ERROR: Please enter a valid pokemon. " + selectedPokemon + " not found.");
             console.log("ERROR: " + error);
         }
     } else {
