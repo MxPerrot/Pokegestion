@@ -1,6 +1,6 @@
 /* Styles for the Pokemon card */
 table td{
-    text-align: center; /* Center the data in the table cells */
+    text-align: center;
 }
 .pokemon-card {
     width: 20%;
