@@ -48,6 +48,9 @@ function afficherPokemon(offset) {
                 pokemonImageDiv.style.display = 'block';
                 pokemonImageDiv.addEventListener('mouseout', () => pokemonImageDiv.style.display = 'none');
             });
+            newRow.querySelector('img').addEventListener('mouseout', () => {
+                pokemonImageDiv.style.display = 'none'
+            });
 
             // Ajouter un écouteur d'événement pour afficher les détails du Pokémon au clic
             newRow.addEventListener('click', () => afficherDetails(pokemon));

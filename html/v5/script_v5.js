@@ -68,6 +68,9 @@ function afficherPokemon(offset, filters) {
                 setTimeout(() => pokemonImageDiv.style.display = 'none', 2000);
                 pokemonImageDiv.addEventListener('mouseout', () => pokemonImageDiv.style.display = 'none');
             });
+            newRow.querySelector('img').addEventListener('mouseout', () => {
+                pokemonImageDiv.style.display = 'none'
+            });
 
             // Ajouter un écouteur d'événement pour afficher les détails du Pokémon au clic
             newRow.addEventListener('click', () => afficherDetails(pokemon));
