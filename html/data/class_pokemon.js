@@ -55,7 +55,7 @@ class Pokemon {
                 */
 
                 // Solution pour trouver la generation
-                let generation_num = 0;
+                let generation_num = 8;
                 for (const gen in generation[0]) {
                     for(let u = 0; u < generation[0][gen].length; u++){
                         if(generation[0][gen][u].id === pokemon[i].pokemon_id){
