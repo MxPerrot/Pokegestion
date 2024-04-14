@@ -1,35 +1,57 @@
-// Sélectionner le tbody dans pokemon_v1.html qui a comme id pokemon-list
-Pokemon.import_pokemon();
-const tbody = document.querySelector('#pokemon-list');
+/******************************************************************************
+*                       Variables globales & Constantes                       * 
+******************************************************************************/
+ 
+const range = 25; // Nombre de Pokémon à afficher par page
 
-// Sélectionner le div ayant l'id "page"
-const pageDiv = document.querySelector('#page');
-
-// Sélectionner le div ayant l'id "details"
+const detailsAttackDiv = document.querySelector('#attack-details');
 const detailsDiv = document.querySelector('#pokemon-details');
 
 const pokemonImageDiv = document.querySelector('#pokemon-image-popup');
+const pageDiv = document.querySelectorAll('.page');
 
-// Sélectionner la zone de filtrage
+const dialogDetails = document.getElementById('pokemon-details');
+const dialogAttackDetails = document.getElementById('attack-details');
+
+const tbody = document.querySelector('#pokemon-list');
+const allPokemon = Pokemon.getPokemons();
+const allAttacks = Pokemon.getAttacks();
+
 const filterDiv = document.querySelector('#filter-container');
+
+// Fonction pour mettre à jour les options de filtrage
+const generationFilter = filterDiv.querySelector('#generation-filter');
+const typeFilter = filterDiv.querySelector('#type-filter');
+const nameFilter = filterDiv.querySelector('#name-filter');
+
+// Variables pour stocker les options de filtrage
+let filters = {
+    generation: null,
+    type: null,
+    name: null
+};
+
+
+/******************************************************************************
+*                                  Fonctions                                  *
+******************************************************************************/
+
 
 // Créer une fonction pour afficher les Pokémon dans le tbody
 function afficherPokemon(offset, filters) {
-    // Récupérer tous les Pokémon de la classe Pokemon
-    const tousLesPokemon = Pokemon.all_pokemon;
 
     // Vider le tbody avant d'ajouter les nouveaux Pokémon
     tbody.innerHTML = '';
 
     // Filtrer les Pokémon en fonction des options de filtrage
-    const filteredPokemon = tousLesPokemon.filter(pokemon => {
+    const filteredPokemon = allPokemon.filter(pokemon => {
         if (filters.generation && pokemon.generation_number != filters.generation) {
             return false;
         }
-        if (filters.type && !pokemon.type.includes(filters.type)) {
+        if (filters.type && !pokemon.getType().includes(filters.type)) {
             return false;
         }
-        if (filters.name && !pokemon.pokemon_name.toLowerCase().includes(filters.name.toLowerCase())) {
+        if (filters.name && !pokemon.getPokemonName().toLowerCase().includes(filters.name.toLowerCase())) {
             return false;
         }
         return true;
@@ -78,35 +100,57 @@ function afficherPokemon(offset, filters) {
     }
 
     // Calculer le numéro de la page courante et le nombre total de pages
-    const currentPage = Math.floor(offset / 25) + 1;
-    const totalPages = Math.ceil(filteredPokemon.length / 25);
+    const currentPage = Math.floor(offset / range) + 1;
+    const totalPages = Math.ceil(filteredPokemon.length / range);
 
-    // Afficher le numéro de la page courante et le nombre total de pages dans le div "page"
-    pageDiv.textContent = `Page ${currentPage} / ${totalPages}`;
+    // Afficher Page x/total 
+    for (let i = 0; i < pageDiv.length; i++) {
+        pageDiv[i].textContent = `Page ${currentPage} / ${totalPages}`;
+    }
 }
 
-// Fonction pour afficher les détails du Pokémon sélectionné
 function afficherDetails(pokemon) {
+    /**
+     * Affiche les détails du Pokémon dans une popup
+     */
+
+    let imageID = pokemon.getPokemonId().toString().padStart(3, '0');
+
     // Générer le HTML pour les détails du Pokémon c'est des array pas des map
     const detailsHTML = `
-        <h2>${pokemon.pokemon_name}</h2>
-        <p>Type: ${pokemon.type}</p>
-        <h3>Charged Attacks:</h3>
-        <ul>
-            ${pokemon.charged_moves.map(attack => `<li>${attack}</li>`).join('')}
-        </ul>
-        <h3>Fast Attacks:</h3>
-        <ul>
-            ${pokemon.fast_moves.map(attack => `<li>${attack}</li>`).join('')}
-        </ul>
+    <div id="details-header">
+        <div id="details-header-left">
+            <h2 id="pokemon-name">${pokemon.getPokemonName()}</h2>
+            <p>${pokemon.getType()}</p>
+        </div>
+        <img id="pokemon-sprite" src="../webp/thumbnails/${imageID}.webp" alt="">
+    </div>
+    <div id="pokemon-attacks">
+        <div id="left-attacks">   
+            <h3>Charged Attacks</h3>
+            <ul>
+                ${pokemon.getChargedMoves().map(attack => `<li>${attack}</li>`).join('')} 
+            </ul>
+        </div>
+        <div id="right-attacks">   
+            <h3>Fast Attacks</h3>
+            <ul>
+                ${pokemon.getFastMoves().map(attack => `<li>${attack}</li>`).join('')}
+            </ul>
+        </div>
+    </div>
     `;
-    console.log(pokemon, detailsHTML);
-    // Afficher les détails dans le div "details"
+
+    // for every li in the uls, add an event listener to show the attack details
+    // const lis = detailsDiv.querySelectorAll('li');
+    // for (let i = 0; i < lis.length; i++) {
+    //     console.log(allAttacks[lis[i].id]);
+    //     lis[i].addEventListener('click', () => afficherDetailsAttaque());
+    // }
+
     detailsDiv.innerHTML = detailsHTML;
-    // afficher la popup
-    detailsDiv.style.display = 'block';
-    // Ajouter un écouteur sur le bouton dans le detailsDiv pour le fermer
-    detailsDiv.addEventListener('click', () => detailsDiv.style.display = 'none');
+    dialogDetails.showModal();
+    detailsDiv.addEventListener('click', () => dialogDetails.close());
 }
 
 // Variables pour suivre l'offset actuel
@@ -131,20 +175,6 @@ function addFilterOptions() {
     filterDiv.querySelector('#type-filter').innerHTML = typeOptions.join('');
 }
 
-addFilterOptions();
-
-// Variables pour stocker les options de filtrage
-let filters = {
-    generation: null,
-    type: null,
-    name: null
-};
-
-// Fonction pour mettre à jour les options de filtrage
-const generationFilter = filterDiv.querySelector('#generation-filter');
-const typeFilter = filterDiv.querySelector('#type-filter');
-const nameFilter = filterDiv.querySelector('#name-filter');
-
 function updateFilters() {
     filters.generation = generationFilter.value;
     filters.type = typeFilter.value;
@@ -153,30 +183,46 @@ function updateFilters() {
     afficherPokemon(offset, filters);
 }
 
-filterDiv.addEventListener('change', updateFilters);
-
-// Fonction pour afficher les 25 Pokémon suivants
 function afficherPokemonSuivants() {
-    offset += 25;
-    afficherPokemon(offset, filters);
-}
-
-// Fonction pour afficher les 25 Pokémon précédents
-function afficherPokemonPrecedents() {
-    offset -= 25;
-    if (offset < 0) {
-        offset = 0;
+    /**
+     * Affiche les <range> Pokémon suivants
+     */
+    
+    if (offset + range < allPokemon.length) {
+        offset += range;
+        afficherPokemon(offset, filters);
     }
+}
+function afficherPokemonPrecedents() {
+    /**
+     * Affiche les <range> Pokémon précédents
+     */
+
+    offset = Math.max(offset-range, 1);
     afficherPokemon(offset, filters);
 }
 
-// Appeler la fonction pour afficher les Pokémon initiaux
-afficherPokemon(offset, filters);
 
-// Sélectionner les boutons pour afficher les Pokémon suivants et précédents
-const boutonSuivant = document.querySelector('#bouton-suivant');
-const boutonPrecedent = document.querySelector('#bouton-precedent');
+/******************************************************************************
+*                                  Execution                                  * 
+******************************************************************************/
 
-// Ajouter des écouteurs d'événements aux boutons
-boutonSuivant.addEventListener('click', afficherPokemonSuivants);
-boutonPrecedent.addEventListener('click', afficherPokemonPrecedents);
+Pokemon.import_pokemon(); // Générer les Pokémon
+afficherPokemon(offset, filters); // Afficher les Pokémon dans le tableau
+
+// Lier les boutons "Suivant" et "Précédent" aux fonctions correspondantes
+const boutonSuivant = document.querySelectorAll('.bouton-suivant');
+const boutonPrecedent = document.querySelectorAll('.bouton-precedent');
+
+for (let i = 0; i < boutonPrecedent.length; i++) {
+    boutonPrecedent[i].addEventListener('click', afficherPokemonPrecedents);
+}
+for (let i = 0; i < boutonSuivant.length; i++) {
+    boutonSuivant[i].addEventListener('click', afficherPokemonSuivants);
+}
+
+addFilterOptions();
+
+
+
+filterDiv.addEventListener('change', updateFilters);
