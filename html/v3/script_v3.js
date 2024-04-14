@@ -1,37 +1,46 @@
-// Sélectionner le tbody dans pokemon_v1.html qui a comme id pokemon-list
-Pokemon.import_pokemon();
-const tbody = document.querySelector('#pokemon-list');
+/******************************************************************************
+*                       Variables globales & Constantes                       * 
+******************************************************************************/
 
-// Sélectionner le div ayant l'id "page"
-const pageDiv = document.querySelector('#page');
+let offset = 1; 
+const range = 25; // Nombre de Pokémon à afficher par page
 
-// Sélectionner le div ayant l'id "details"
+const detailsAttackDiv = document.querySelector('#attack-details');
 const detailsDiv = document.querySelector('#pokemon-details');
 
 const pokemonImageDiv = document.querySelector('#pokemon-image-popup');
+const pageDiv = document.querySelectorAll('.page');
 
-// Créer une fonction pour afficher les Pokémon dans le tbody
+const dialogDetails = document.getElementById('pokemon-details');
+const dialogAttackDetails = document.getElementById('attack-details');
+
+const tbody = document.querySelector('#pokemon-list');
+const allPokemon = Pokemon.getPokemons();
+const allAttacks = Pokemon.getAttacks();
+
+/******************************************************************************
+*                                  Fonctions                                  *
+******************************************************************************/
+
 function afficherPokemon(offset) {
-    offset += 1;
-    // Récupérer tous les Pokémon de la classe Pokemon
-    const tousLesPokemon = Pokemon.all_pokemon;
-
-    // Vider le tbody avant d'ajouter les nouveaux Pokémon
-    tbody.innerHTML = '';
-
-    // Calculer l'index de départ et de fin pour les Pokémon à afficher
+    /**
+     * Fonction principale pour afficher les Pokémon dans le tableau
+     */
+    
     const startIndex = offset;
-    const endIndex = offset + 25;
+    const endIndex = offset + range;
+
+    tbody.innerHTML = ''; // Vider le tbody avant d'ajouter les nouveaux Pokémon
 
     // Parcourir chaque Pokémon dans la plage spécifiée et les ajouter au tbody
     for (let i = startIndex; i < endIndex; i++) {
-        const pokemon = tousLesPokemon[i];
+        const pokemon = allPokemon[i];
 
         // Vérifier si le Pokémon existe
         if (pokemon) {
             // Créer une nouvelle ligne de tableau pour chaque Pokémon
             const newRow = document.createElement('tr');
-            let imageID = pokemon.pokemon_id.toString().padStart(3, '0');
+            let imageID = pokemon.getPokemonId().toString().padStart(3, '0');
             newRow.innerHTML = `
                 <td>${pokemon.pokemon_id}</td>
                 <td>${pokemon.pokemon_name}</td>
@@ -42,12 +51,15 @@ function afficherPokemon(offset) {
                 <td>${pokemon.base_defense}</td>
                 <td><img src="../webp/sprites/${imageID}MS.webp" alt="${pokemon.pokemon_name}"></td>
             `;
-            
+
+            // Ajouter un écouteur d'événement pour afficher l'image du Pokémon au survol
             newRow.querySelector('img').addEventListener('mouseover', () => {
                 pokemonImageDiv.innerHTML = `<img src="../webp/images/${imageID}.webp" alt="${pokemon.pokemon_name}">`;
                 pokemonImageDiv.style.display = 'block';
                 pokemonImageDiv.addEventListener('mouseout', () => pokemonImageDiv.style.display = 'none');
             });
+
+            // Ajouter un écouteur d'événement pour cacher l'image du Pokémon au survol
             newRow.querySelector('img').addEventListener('mouseout', () => {
                 pokemonImageDiv.style.display = 'none'
             });
@@ -61,62 +73,119 @@ function afficherPokemon(offset) {
     }
 
     // Calculer le numéro de la page courante et le nombre total de pages
-    const currentPage = Math.floor(offset / 25) + 1;
-    const totalPages = Math.ceil(tousLesPokemon.length / 25);
+    const currentPage = Math.floor(offset / range) + 1;
+    const totalPages = Math.ceil(allPokemon.length / range);
 
-    // Afficher le numéro de la page courante et le nombre total de pages dans le div "page"
-    pageDiv.textContent = `Page ${currentPage} / ${totalPages}`;
+    // Afficher Page x/total 
+    for (let i = 0; i < pageDiv.length; i++) {
+        pageDiv[i].textContent = `Page ${currentPage} / ${totalPages}`;
+    }
 }
 
-// Fonction pour afficher les détails du Pokémon sélectionné
 function afficherDetails(pokemon) {
+    /**
+     * Affiche les détails du Pokémon dans une popup
+     */
+
+    let imageID = pokemon.getPokemonId().toString().padStart(3, '0');
+
     // Générer le HTML pour les détails du Pokémon c'est des array pas des map
     const detailsHTML = `
-        <h2>${pokemon.pokemon_name}</h2>
-        <p>Type: ${pokemon.type}</p>
-        <h3>Charged Attacks:</h3>
-        <ul>
-            ${pokemon.charged_moves.map(attack => `<li>${attack}</li>`).join('')}
-        </ul>
-        <h3>Fast Attacks:</h3>
-        <ul>
-            ${pokemon.fast_moves.map(attack => `<li>${attack}</li>`).join('')}
-        </ul>
+    <div id="details-header">
+        <div id="details-header-left">
+            <h2 id="pokemon-name">${pokemon.getPokemonName()}</h2>
+            <p>${pokemon.getType()}</p>
+        </div>
+        <img id="pokemon-sprite" src="../webp/thumbnails/${imageID}.webp" alt="">
+    </div>
+    <div id="pokemon-attacks">
+        <div id="left-attacks">   
+            <h3>Charged Attacks</h3>
+            <ul>
+                ${pokemon.getChargedMoves().map(attack => `<li>${attack}</li>`).join('')} 
+            </ul>
+        </div>
+        <div id="right-attacks">   
+            <h3>Fast Attacks</h3>
+            <ul>
+                ${pokemon.getFastMoves().map(attack => `<li>${attack}</li>`).join('')}
+            </ul>
+        </div>
+    </div>
     `;
-    console.log(pokemon, detailsHTML);
-    // Afficher les détails dans le div "details"
+
+    // for every li in the uls, add an event listener to show the attack details
+    // const lis = detailsDiv.querySelectorAll('li');
+    // for (let i = 0; i < lis.length; i++) {
+    //     console.log(allAttacks[lis[i].id]);
+    //     lis[i].addEventListener('click', () => afficherDetailsAttaque());
+    // }
+
     detailsDiv.innerHTML = detailsHTML;
-    // afficher la popup
-    detailsDiv.style.display = 'block';
-    // Ajouter un écouteur sur le bouton dans le detailsDiv pour le fermer
-    detailsDiv.addEventListener('click', () => detailsDiv.style.display = 'none');
+    dialogDetails.showModal();
+    detailsDiv.addEventListener('click', () => dialogDetails.close());
 }
 
-// Variables pour suivre l'offset actuel
-let offset = 0;
+function afficherDetailsAttaque(attack) {
+    /**
+     * TODO
+     * Affiche les détails de l'attaque dans une popup
+     */
 
-// Fonction pour afficher les 25 Pokémon suivants
+    const detailsHTML = `
+    <div id="attack-header">
+        <h2 id="attack-name">${attack.getName()}</h2>
+    </div>
+    <ul>
+        <li>ID : ${attack.getMoveId()}</li>
+        <li>Power : ${attack.getPower()}</li>
+        <li>Type : ${attack.getType()}</li>
+        <li>Duration : ${attack.getDuration()}</li>
+        <li>Energy delta : ${attack.getEnergyDelta()}</li>
+        <li>Stamina loss scaler : ${attack.getStaminaLossScaler()}</li>
+        <li>Critical chance : ${attack.getCriticalChance()}</li>
+    </ul>`;
+
+    detailsAttackDiv.innerHTML = detailsHTML;
+    dialogAttackDetails.showModal();
+    detailsAttackDiv.addEventListener('click', () => dialogAttackDetails.close());
+    // NE FONCTIONNE PAS
+}
+
 function afficherPokemonSuivants() {
-    offset += 25;
-    afficherPokemon(offset);
-}
-
-// Fonction pour afficher les 25 Pokémon précédents
-function afficherPokemonPrecedents() {
-    offset -= 25;
-    if (offset < 0) {
-        offset = 0;
+    /**
+     * Affiche les <range> Pokémon suivants
+     */
+    
+    if (offset + range < allPokemon.length) {
+        offset += range;
+        afficherPokemon(offset);
     }
+}
+function afficherPokemonPrecedents() {
+    /**
+     * Affiche les <range> Pokémon précédents
+     */
+
+    offset = Math.max(offset-range, 1);
     afficherPokemon(offset);
 }
 
-// Appeler la fonction pour afficher les Pokémon initiaux
-afficherPokemon(offset);
 
-// Sélectionner les boutons pour afficher les Pokémon suivants et précédents
-const boutonSuivant = document.querySelector('#bouton-suivant');
-const boutonPrecedent = document.querySelector('#bouton-precedent');
+/******************************************************************************
+*                                  Execution                                  * 
+******************************************************************************/
 
-// Ajouter des écouteurs d'événements aux boutons
-boutonSuivant.addEventListener('click', afficherPokemonSuivants);
-boutonPrecedent.addEventListener('click', afficherPokemonPrecedents);
+Pokemon.import_pokemon(); // Générer les Pokémon
+afficherPokemon(offset); // Afficher les Pokémon dans le tableau
+
+// Lier les boutons "Suivant" et "Précédent" aux fonctions correspondantes
+const boutonSuivant = document.querySelectorAll('.bouton-suivant');
+const boutonPrecedent = document.querySelectorAll('.bouton-precedent');
+
+for (let i = 0; i < boutonPrecedent.length; i++) {
+    boutonPrecedent[i].addEventListener('click', afficherPokemonPrecedents);
+}
+for (let i = 0; i < boutonSuivant.length; i++) {
+    boutonSuivant[i].addEventListener('click', afficherPokemonSuivants);
+}

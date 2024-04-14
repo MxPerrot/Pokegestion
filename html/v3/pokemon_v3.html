@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head>    
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta lang="fr">
+    <meta name="keywords" content="Pokedex, Pokemon, Pokegestion, JavaScript, JS">
+    <meta name="description" content="Un pokédex en HTML/CSS & JavaScript">
+    <meta name="author" content="Samuel BAZIN & Maxime PERROT">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style2.css" type="text/css">
+   
+    <!-- Title -->
     <title>Pokemon Details</title>
-    <link rel="stylesheet" href="../template/template.css">
+
+    <!-- Scripts -->    
     <script src="../data/charged_moves.js"      defer></script>
     <script src="../data/cp_multiplier.js"      defer></script>
     <script src="../data/fast_moves.js"         defer></script>
@@ -19,39 +32,58 @@
     <script src="script_v3.js"                  defer></script>
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Generation</th>
-                <th>Type</th>
-                <th>Stamina</th>
-                <th>Attack</th>
-                <th>Defense</th>
-                <th>Image</th>
-            </tr>
-        </thead>
-        <tbody id="pokemon-list">
-        </tbody>
-    </table>
-
-    <div class="popup" id="pokemon-details">
-        <h2 id="pokemon-name"></h2>
-        <div id="pokemon-attacks">
-            <h3>Charged Attacks</h3>
-            <ul id="charged-attacks-list"></ul>
-            <h3>Fast Attacks</h3>
-            <ul id="fast-attacks-list"></ul>
+    <header>
+        <h1 id="main-title"><img src="../webp/icons/logo.webp" alt="Pokégestion">v3</h1>
+        <nav>
+            <ul>
+                <li><a href="../v1/pokemon_v1.html">v1</a></li>
+                <li><a href="../v2/pokemon_v2.html">v2</a></li>
+                <li><a href="../v3/pokemon_v3.html">v3</a></li>
+                <li><a href="../v4/pokemon_v4.html">v4</a></li>
+                <li><a href="../v5/pokemon_v5.html">v5</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="precedent-suivant">
+            <button class="bouton-page bouton-precedent">Previous</button>
+            <div class="page"></div>
+            <button class="bouton-page bouton-suivant">Next</button>
         </div>
-    </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Gen</th>
+                    <th>Type</th>
+                    <th>Stamina</th>
+                    <th>Attack</th>
+                    <th>Defense</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody id="pokemon-list">
+            </tbody>
+        </table>
+        <div class="precedent-suivant">
+            <button class="bouton-page bouton-precedent">Previous</button>
+            <div class="page"></div>
+            <button class="bouton-page bouton-suivant">Next</button>
+        </div>
 
-    <div class="popup" id="pokemon-image-popup">
-        <img id="pokemon-image" src="" alt="">
-    </div>
+        <dialog class="popup" id="pokemon-details"></dialog>
+        <dialog class="popup" id="attack-details"></dialog>
+        <div id="pokemon-image-popup"></div>
 
-    <button id="bouton-precedent">Previous</button>
-    <div id="page"></div>
-    <button id="bouton-suivant">Next</button>
+    </main>
+    <footer>
+        <p>Samuel BAZIN & Maxime PERROT</p>
+        <p>IUT de Lannion - BUT Informatique - R4.A.10 Comp. Web JS</p>
+        <p>2023 - 2024</p>
+        <a href="https://github.com/MxPerrot/Pokegestion" target="_blank" class="footer-link">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48px" height="47px" viewBox="0 0 49 48" version="1.1"><path style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 24.425781 0 C 10.917969 0 0 11 0 24.609375 C 0 35.488281 6.996094 44.695312 16.703125 47.953125 C 17.914062 48.199219 18.359375 47.425781 18.359375 46.773438 C 18.359375 46.203125 18.320312 44.246094 18.320312 42.210938 C 11.527344 43.675781 10.109375 39.277344 10.109375 39.277344 C 9.019531 36.421875 7.402344 35.691406 7.402344 35.691406 C 5.175781 34.183594 7.5625 34.183594 7.5625 34.183594 C 10.03125 34.347656 11.324219 36.710938 11.324219 36.710938 C 13.507812 40.457031 17.027344 39.398438 18.441406 38.746094 C 18.644531 37.15625 19.289062 36.058594 19.976562 35.445312 C 14.558594 34.875 8.855469 32.757812 8.855469 23.304688 C 8.855469 20.617188 9.828125 18.414062 11.363281 16.703125 C 11.121094 16.09375 10.273438 13.566406 11.605469 10.183594 C 11.605469 10.183594 13.667969 9.535156 18.320312 12.710938 C 20.3125 12.171875 22.363281 11.898438 24.425781 11.898438 C 26.488281 11.898438 28.59375 12.183594 30.535156 12.710938 C 35.183594 9.535156 37.246094 10.183594 37.246094 10.183594 C 38.582031 13.566406 37.730469 16.09375 37.488281 16.703125 C 39.066406 18.414062 39.996094 20.617188 39.996094 23.304688 C 39.996094 32.757812 34.296875 34.835938 28.835938 35.445312 C 29.726562 36.21875 30.492188 37.6875 30.492188 40.007812 C 30.492188 43.308594 30.453125 45.957031 30.453125 46.773438 C 30.453125 47.425781 30.898438 48.199219 32.109375 47.953125 C 41.816406 44.695312 48.8125 35.488281 48.8125 24.609375 C 48.851562 11 37.894531 0 24.425781 0 Z M 24.425781 0 "/></svg>
+        </a>
+    </footer>
 </body>
 </html>
