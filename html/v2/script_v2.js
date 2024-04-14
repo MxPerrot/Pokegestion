@@ -1,26 +1,30 @@
-// Sélectionner le tbody dans pokemon_v1.html qui a comme id pokemon-list
-Pokemon.import_pokemon();
+/******************************************************************************
+*                       Variables globales & Constantes                       * 
+******************************************************************************/
+
+let offset = 1; 
+const range = 25; // Nombre de Pokémon à afficher par page
+const pageDiv = document.querySelectorAll('.page');
 const tbody = document.querySelector('#pokemon-list');
+const allPokemon = Pokemon.getPokemons();
 
-// Sélectionner le div ayant l'id "page"
-const pageDiv = document.querySelector('#page');
+/******************************************************************************
+*                                  Fonctions                                  *
+******************************************************************************/
 
-// Créer une fonction pour afficher les Pokémon dans le tbody
 function afficherPokemon(offset) {
-    offset += 1;
-    // Récupérer tous les Pokémon de la classe Pokemon
-    const tousLesPokemon = Pokemon.all_pokemon;
-
-    // Vider le tbody avant d'ajouter les nouveaux Pokémon
-    tbody.innerHTML = '';
-
-    // Calculer l'index de départ et de fin pour les Pokémon à afficher
+    /**
+     * Fonction principale pour afficher les Pokémon dans le tableau
+     */
+    
     const startIndex = offset;
-    const endIndex = offset + 25;
+    const endIndex = offset + range;
+    
+    tbody.innerHTML = ''; // Vider le tbody avant d'ajouter les nouveaux Pokémon
 
     // Parcourir chaque Pokémon dans la plage spécifiée et les ajouter au tbody
     for (let i = startIndex; i < endIndex; i++) {
-        const pokemon = tousLesPokemon[i];
+        const pokemon = allPokemon[i];
 
         // Vérifier si le Pokémon existe
         if (pokemon) {
@@ -44,38 +48,50 @@ function afficherPokemon(offset) {
     }
 
     // Calculer le numéro de la page courante et le nombre total de pages
-    const currentPage = Math.floor(offset / 25) + 1;
-    const totalPages = Math.ceil(tousLesPokemon.length / 25);
+    const currentPage = Math.floor(offset / range) + 1;
+    const totalPages = Math.ceil(allPokemon.length / range);
 
-    // Afficher le numéro de la page courante et le nombre total de pages dans le div "page"
-    pageDiv.textContent = `Page ${currentPage} / ${totalPages}`;
-}
-
-// Variables pour suivre l'offset actuel
-let offset = 0;
-
-// Fonction pour afficher les 25 Pokémon suivants
-function afficherPokemonSuivants() {
-    offset += 25;
-    afficherPokemon(offset);
-}
-
-// Fonction pour afficher les 25 Pokémon précédents
-function afficherPokemonPrecedents() {
-    offset -= 25;
-    if (offset < 0) {
-        offset = 0;
+    // Afficher Page x/total 
+    for (let i = 0; i < pageDiv.length; i++) {
+        pageDiv[i].textContent = `Page ${currentPage} / ${totalPages}`;
     }
+}
+
+function afficherPokemonSuivants() {
+    /**
+     * Affiche les <range> Pokémon suivants
+     */
+    
+    if (offset + range < allPokemon.length) {
+        offset += range;
+        afficherPokemon(offset);
+    }
+}
+
+function afficherPokemonPrecedents() {
+    /**
+     * Affiche les <range> Pokémon précédents
+     */
+
+    offset = Math.max(offset-range, 1);
     afficherPokemon(offset);
 }
 
-// Appeler la fonction pour afficher les Pokémon initiaux
-afficherPokemon(offset);
 
-// Sélectionner les boutons pour afficher les Pokémon suivants et précédents
-const boutonSuivant = document.querySelector('#bouton-suivant');
-const boutonPrecedent = document.querySelector('#bouton-precedent');
+/******************************************************************************
+*                                  Execution                                  * 
+******************************************************************************/
 
-// Ajouter des écouteurs d'événements aux boutons
-boutonSuivant.addEventListener('click', afficherPokemonSuivants);
-boutonPrecedent.addEventListener('click', afficherPokemonPrecedents);
+Pokemon.import_pokemon(); // Générer les Pokémon
+afficherPokemon(offset); // Afficher les Pokémon dans le tableau
+
+// Lier les boutons portant les classes "Suivant" et "Précédent" aux fonctions correspondantes
+const boutonPrecedent = document.querySelectorAll(".bouton-precedent");;
+const boutonSuivant = document.querySelectorAll(".bouton-suivant");;
+
+for (let i = 0; i < boutonPrecedent.length; i++) {
+    boutonPrecedent[i].addEventListener('click', afficherPokemonPrecedents);
+}
+for (let i = 0; i < boutonSuivant.length; i++) {
+    boutonSuivant[i].addEventListener('click', afficherPokemonSuivants);
+}
