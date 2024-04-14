@@ -3,7 +3,8 @@
 ********************************************************************/
 
 :root {
-    --primary-color: #007bff;
+    --primary-color: #386ABB;
+    --dark-primary-color: #37578b;
     --secondary-color: #6c757d;
     --success-color: #28a745;
     --info-color: #17a2b8;
@@ -28,12 +29,177 @@ body {
 }
 
 
+/********************************************************************
+*                               HEADER                              *
+********************************************************************/
 
-/* Styles for the Pokemon card */
-table td{
+header {
+    background-color: var(--light-gray-color);
+    margin-bottom: 50px;
+    padding-top: 10px;
+    color: var(--primary-color);
+}
+
+header h1 {
+    padding: 10px 0;
     text-align: center;
 }
-.pokemon-card {
+
+/* Styles the navigation bar to be full width and horizontal */
+nav ul {
+    list-style-type: none; 
+    margin: 0;             
+    padding: 0;            
+    display: flex;         
+    width: 100%;           
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Styles each list item to grow and take up equal space */
+nav ul li {
+    flex-grow: 1;           
+    text-align: center;     
+}
+
+/* Styles links to cover the entire area of their list item */
+nav ul li a {
+    display: block;         
+    padding: 10px 0;        
+    color: white;
+    font-size: 2em;
+    text-decoration: none;  
+    width: 100%;       
+}
+
+/* Optional: add hover effect to the links for better user experience */
+nav ul li a:hover {
+    background-color: var(--dark-primary-color);
+}
+
+/********************************************************************
+*                                MAIN                               *
+********************************************************************/
+
+main {
+    margin-bottom: 120px;
+}
+
+
+/********************************************************************
+*                               TABLES                              *
+********************************************************************/
+table {
+    /* center the table element in the page*/
+    margin: 0 auto;
+    border-collapse: collapse;
+    
+    /* border */
+    border: 5px solid var(--primary-color);
+
+    /* font */
+    font-family: 'Pokemon';
+    text-align: center;
+}
+
+thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+table tr {
+    margin-left: 100px;
+    padding: 10px;
+}
+
+table th{
+    padding: 10px;
+    font-size: large;
+    font-weight: normal;
+}
+
+table tr:nth-child(even) {
+    background-color: var(--light-gray-color);
+}
+
+table tbody tr:hover {
+    background-color: #d3d3d3;
+}
+
+
+/********************************************************************
+*                           TRIS & FILTRES                          *
+********************************************************************/
+/*         <div id="filter-container">
+            <label for="generation-filter">Generation:</label>
+            <select id="generation-filter">
+                <option value="">All</option>
+            </select>
+    
+            <label for="type-filter">Type:</label>
+            <select id="type-filter">
+                <option value="">All</option>
+            </select>
+    
+            <label for="name-filter">Name:</label>
+            <input type="text" id="name-filter">
+        </div>
+ */
+
+#filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#filter-container label {
+    margin: 0 10px;
+}
+
+#filter-container select, #filter-container input {
+    background-color: var(--light-gray-color);
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+
+
+/********************************************************************
+*                    BOUTONS PRECEDENT / SUIVANT                    *
+********************************************************************/
+
+/*Aligner verticalement au milieu les elements du div .precedent-suivant*/
+
+.precedent-suivant {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+
+}
+
+.precedent-suivant div {
+    margin: 0 10px;
+}
+
+.bouton-page {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+/********************************************************************
+*                           POKEMON CARD                            *
+********************************************************************/
+
+/* .pokemon-card {
     width: 20%;
     background-color: #f2f2f2;
     border: 1px solid #ccc;
@@ -44,36 +210,36 @@ table td{
 }
 
 /* Styles for the Pokemon name */
-.pokemon-name {
+/* .pokemon-name {
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 5px;
-}
+} */
 
 /* Styles for the Pokemon image */
-.pokemon-image {
+/* .pokemon-image {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
-}
+} */
 
 /* Styles for the Pokemon details */
-.pokemon-details {
+/* .pokemon-details {
     font-size: 14px;
-}
+} */
 
 /* Styles for the Pokemon type */
-.pokemon-type {
+/* .pokemon-type {
     margin-bottom: 5px;
-}
+} */
 
 /* Styles for the Pokemon abilities */
-.pokemon-abilities {
+/* .pokemon-abilities {
     margin-bottom: 5px;
-}
+} */
 
 /* Styles for the Pokemon stats */
-.pokemon-stats {
+/* .pokemon-stats {
     margin-bottom: 5px;
 }
 
@@ -95,4 +261,104 @@ table td{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
+} */
+
+/* General style for the popup */
+
+.popup {
+    position: fixed;
+    
+    /* Centers the popup */
+    top: 50%;              /* Centers the popup vertically */
+    left: 50%;             /* Centers the popup horizontally */
+    transform: translate(-50%, -50%); /* Centers the popup */
+
+    width:400px;             /* Sets the width of the popup */
+    margin: 20px auto;      /* Centers the popup horizontally and adds margin on top and bottom */
+    background-color: white; /* Sets the background color */
+    border: 2px solid #ccc; /* Border for the popup */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a shadow for 3D effect */
+    border: 5px solid var(--primary-color); /* Border color */
+    padding: 0;
+    font-family: 'Pokemon';
+}
+
+/* Header styling to place elements side by side */
+#details-header {
+    display: flex;         /* Flexbox to lay elements side by side */
+    justify-content: space-around; /* Distributes space between children */
+    align-items: center;   /* Vertically centers the items */
+    background-color: var(--primary-color); /* Background color */
+    color: white;          /* Text color */
+}
+
+
+/* Image styling */
+.popup img {
+    display: block;        /* Block display to respect margins */
+}
+
+/* Attacks container styling */
+#pokemon-attacks {
+    display: flex;         /* Flexbox to lay child elements side by side */
+    justify-content: space-evenly; /* Evenly spaces the child divs */
+    text-align: center;    /* Centers the text */
+}
+
+/* Individual attacks section styling */
+#left-attacks, #right-attacks {
+    width: 48%;            /* Each takes up nearly half the container width */
+}
+
+/* List styling within attacks sections */
+#left-attacks ul, #right-attacks ul {
+    list-style-type: none; /* Removes default list bullets */
+    padding: 0;            /* Removes padding */
+}
+
+/* List items styling */
+#left-attacks li, #right-attacks li {
+    background-color: #f0f0f0; /* Light gray background for visibility */
+    padding: 8px;          /* Padding for list items */
+    margin-bottom: 4px;    /* Margin bottom for spacing between items */
+}
+
+#pokemon-attacks li:hover {
+    background-color: #e0e0e0; /* Light gray background for visibility */
+}
+
+/********************************************************************
+*                             IMAGE POPUP                           *
+********************************************************************/
+
+#pokemon-image-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/********************************************************************
+*                               FOOTER                              *
+********************************************************************/
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--dark-color);
+    color: white;
+    padding: 10px 0;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+
+footer * {
+    margin: 0 15px;
 }
