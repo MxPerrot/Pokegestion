@@ -1,0 +1,98 @@
+/********************************************************************
+*                               GLOBAL                              *
+********************************************************************/
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --light-gray-color: #e7e4e4;
+    --dark-color: #343a40;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+/* Adding a font from a file*/
+@font-face {
+    font-family: 'Pokemon';
+    src: url('../fonts/Pokemon_2Gen.ttf') format('truetype');
+}
+
+
+
+/* Styles for the Pokemon card */
+table td{
+    text-align: center;
+}
+.pokemon-card {
+    width: 20%;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+}
+
+/* Styles for the Pokemon name */
+.pokemon-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Styles for the Pokemon image */
+.pokemon-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Styles for the Pokemon details */
+.pokemon-details {
+    font-size: 14px;
+}
+
+/* Styles for the Pokemon type */
+.pokemon-type {
+    margin-bottom: 5px;
+}
+
+/* Styles for the Pokemon abilities */
+.pokemon-abilities {
+    margin-bottom: 5px;
+}
+
+/* Styles for the Pokemon stats */
+.pokemon-stats {
+    margin-bottom: 5px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.pokemon-image {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
